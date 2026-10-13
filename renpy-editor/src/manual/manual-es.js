@@ -201,6 +201,17 @@
   </ul>
   <p>Elige la carpeta de destino y pulsa <em>Compilar</em>. Verás el progreso; puedes ocultar el diálogo mientras tanto (te avisará al terminar) o pararlo. Al acabar, <em>Abrir carpeta</em> te lleva a los archivos.</p>
   <p>Si tu novela tiene un parche, aquí eliges además qué versión compilar (ver <a href="#patch">Parches</a>).</p>
+  <h3>Android</h3>
+  <p>En el mismo diálogo puedes marcar <strong>APK</strong> (para probar en el móvil o repartirlo tú, por ejemplo en itch.io) y <strong>AAB</strong> (el formato que pide Google Play). La primera vez el editor te guía por cuatro pasos y descarga lo necesario por ti:</p>
+  <ol>
+    <li><strong>Herramientas de Android de Ren'Py (RAPT)</strong>, unos 60 MB, dentro de tu carpeta de Ren'Py.</li>
+    <li><strong>Java 21</strong>, unos 190 MB, solo para el editor.</li>
+    <li><strong>SDK de Android</strong>, varios cientos de MB. Antes de instalarlo tienes que aceptar los términos de Google (puedes leerlos desde el propio diálogo).</li>
+    <li><strong>Claves de firma:</strong> escribe tu nombre o el de tu estudio y pulsa <em>Crear</em>. Se guardan en la carpeta del proyecto como <code>android.keystore</code> y <code>bundle.keystore</code>.</li>
+  </ol>
+  <div class="man-note"><strong>Importante:</strong> haz una copia de seguridad de las claves. Si las pierdes, no podrás publicar actualizaciones de tu app.</div>
+  <p>Después rellena los <strong>datos de la app</strong>: nombre, nombre corto (bajo el icono), <em>paquete</em> (por ejemplo <code>com.tuestudio.tujuego</code>; no se puede cambiar una vez publicada), versión, número de versión (un entero que debe subir en cada actualización de Google Play) y orientación. Se guardan en <code>android.json</code>.</p>
+  <p>La primera compilación para Android tarda bastante porque descarga más herramientas; las siguientes son mucho más rápidas.</p>
   <h3>Probar el juego</h3>
   <p><strong>Iniciar juego</strong>, en la barra lateral, abre tu novela con Ren'Py tal como está guardada. Si hay errores en el código, Ren'Py los mostrará al arrancar.</p>
 </section>

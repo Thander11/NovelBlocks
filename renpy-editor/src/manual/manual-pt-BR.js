@@ -201,6 +201,17 @@
   </ul>
   <p>Escolha a pasta de destino e clique em <em>{{build_start}}</em>. Você verá o progresso; pode esconder a janela enquanto isso (ela avisa quando terminar) ou parar. No fim, <em>{{build_open_folder}}</em> leva aos arquivos.</p>
   <p>Se a sua novel tem um patch, aqui você também escolhe qual versão compilar (veja <a href="#patch">Patches</a>).</p>
+  <h3>Android</h3>
+  <p>No mesmo diálogo você pode marcar <strong>APK</strong> (para testar no celular ou distribuir você mesmo, por exemplo no itch.io) e <strong>AAB</strong> (o formato que o Google Play pede). Na primeira vez, o editor guia você por quatro etapas e baixa o necessário:</p>
+  <ol>
+    <li><strong>Ferramentas Android do Ren'Py (RAPT)</strong>, cerca de 60 MB, dentro da sua pasta do Ren'Py.</li>
+    <li><strong>Java 21</strong>, cerca de 190 MB, só para o editor.</li>
+    <li><strong>SDK do Android</strong>, várias centenas de MB. Antes de instalá-lo você precisa aceitar os termos do Google (pode lê-los pelo próprio diálogo).</li>
+    <li><strong>Chaves de assinatura:</strong> escreva seu nome ou o do seu estúdio e clique em <em>Criar</em>. Elas ficam na pasta do projeto como <code>android.keystore</code> e <code>bundle.keystore</code>.</li>
+  </ol>
+  <div class="man-note"><strong>Importante:</strong> faça um backup das chaves. Se perdê-las, não poderá publicar atualizações do seu app.</div>
+  <p>Depois preencha os <strong>dados do app</strong>: nome, nome curto (abaixo do ícone), <em>pacote</em> (por exemplo <code>com.seuestudio.seujogo</code>; não pode mudar depois de publicado), versão, número da versão (um inteiro que precisa subir a cada atualização no Google Play) e orientação. Eles ficam em <code>android.json</code>.</p>
+  <p>A primeira compilação para Android demora porque baixa mais ferramentas; as seguintes são bem mais rápidas.</p>
   <h3>Testar o jogo</h3>
   <p><strong>{{launch_project}}</strong>, na barra lateral, abre a sua novel no Ren'Py do jeito que está salva. Se houver erros no código, o Ren'Py os mostra ao iniciar.</p>
 </section>

@@ -201,6 +201,17 @@
   </ul>
   <p>选择目标文件夹并点击<em>{{build_start}}</em>。你会看到进度；期间可以隐藏对话框（完成时会通知你）或停止构建。完成后，<em>{{build_open_folder}}</em>会带你找到文件。</p>
   <p>如果你的小说有补丁，也在这里选择要构建的版本（参见<a href="#patch">补丁</a>）。</p>
+  <h3>Android</h3>
+  <p>在同一个对话框中可以勾选 <strong>APK</strong>（用于在手机上测试或自行分发，例如在 itch.io 上）和 <strong>AAB</strong>（Google Play 要求的格式）。第一次使用时，编辑器会带你完成四个步骤，并替你下载所需内容：</p>
+  <ol>
+    <li><strong>Ren'Py 的 Android 工具（RAPT）</strong>，约 60 MB，放在你的 Ren'Py 文件夹中。</li>
+    <li><strong>Java 21</strong>，约 190 MB，仅供编辑器使用。</li>
+    <li><strong>Android SDK</strong>，数百 MB。安装前需要接受 Google 的条款（可以直接在对话框中阅读）。</li>
+    <li><strong>签名密钥：</strong>输入你的名字或工作室名称，然后点击<em>创建</em>。它们会以 <code>android.keystore</code> 和 <code>bundle.keystore</code> 保存在项目文件夹中。</li>
+  </ol>
+  <div class="man-note"><strong>重要：</strong>请备份密钥。如果丢失，你将无法发布应用的更新。</div>
+  <p>然后填写<strong>应用信息</strong>：名称、短名称（图标下方）、<em>包名</em>（例如 <code>com.yourstudio.yourgame</code>，发布后不能更改）、版本、版本号（每次在 Google Play 更新时都必须增加的整数）和方向。这些信息保存在 <code>android.json</code> 中。</p>
+  <p>第一次 Android 构建需要较长时间，因为要下载更多工具；之后会快很多。</p>
   <h3>测试游戏</h3>
   <p>侧边栏的<strong>{{launch_project}}</strong>会用 Ren'Py 按已保存的状态打开你的小说。如果代码有错误，Ren'Py 会在启动时显示。</p>
 </section>

@@ -201,6 +201,17 @@
   </ul>
   <p>Wähle den Zielordner und klicke auf <em>{{build_start}}</em>. Du siehst den Fortschritt; du kannst den Dialog währenddessen ausblenden (du wirst benachrichtigt, wenn es fertig ist) oder abbrechen. Am Ende führt <em>{{build_open_folder}}</em> zu den Dateien.</p>
   <p>Hat deine Novel einen Patch, wählst du hier außerdem die Version (siehe <a href="#patch">Patches</a>).</p>
+  <h3>Android</h3>
+  <p>Im selben Dialog kannst du <strong>APK</strong> (zum Testen auf dem Handy oder zum selbst Verteilen, z. B. auf itch.io) und <strong>AAB</strong> (das Format, das Google Play verlangt) ankreuzen. Beim ersten Mal führt dich der Editor durch vier Schritte und lädt das Nötige für dich herunter:</p>
+  <ol>
+    <li><strong>Android-Werkzeuge von Ren'Py (RAPT)</strong>, etwa 60 MB, in deinem Ren'Py-Ordner.</li>
+    <li><strong>Java 21</strong>, etwa 190 MB, nur für den Editor.</li>
+    <li><strong>Android SDK</strong>, mehrere hundert MB. Vor der Installation musst du die Bedingungen von Google akzeptieren (du kannst sie direkt im Dialog lesen).</li>
+    <li><strong>Signaturschlüssel:</strong> gib deinen Namen oder den deines Studios ein und klicke auf <em>Erstellen</em>. Sie werden im Projektordner als <code>android.keystore</code> und <code>bundle.keystore</code> gespeichert.</li>
+  </ol>
+  <div class="man-note"><strong>Wichtig:</strong> Sichere die Schlüssel. Wenn du sie verlierst, kannst du keine Updates deiner App mehr veröffentlichen.</div>
+  <p>Danach füllst du die <strong>App-Daten</strong> aus: Name, Kurzname (unter dem Symbol), <em>Paket</em> (z. B. <code>com.deinstudio.deinspiel</code>; nach der Veröffentlichung nicht mehr änderbar), Version, Versionsnummer (eine ganze Zahl, die bei jedem Google-Play-Update steigen muss) und Ausrichtung. Sie werden in <code>android.json</code> gespeichert.</p>
+  <p>Der erste Android-Build dauert eine Weile, weil weitere Werkzeuge geladen werden; die nächsten sind viel schneller.</p>
   <h3>Das Spiel testen</h3>
   <p><strong>{{launch_project}}</strong> in der Seitenleiste öffnet deine Novel mit Ren'Py so, wie sie gespeichert ist. Gibt es Fehler im Code, zeigt Ren'Py sie beim Start.</p>
 </section>

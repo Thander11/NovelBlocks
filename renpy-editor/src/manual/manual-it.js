@@ -201,6 +201,17 @@
   </ul>
   <p>Scegli la cartella di destinazione e premi <em>{{build_start}}</em>. Vedrai l'avanzamento; puoi nascondere la finestra nel frattempo (ti avviserà alla fine) o fermarla. Alla fine, <em>{{build_open_folder}}</em> ti porta ai file.</p>
   <p>Se la tua novel ha una patch, qui scegli anche quale versione compilare (vedi <a href="#patch">Patch</a>).</p>
+  <h3>Android</h3>
+  <p>Nella stessa finestra puoi spuntare <strong>APK</strong> (per provarlo sul telefono o distribuirlo tu, per esempio su itch.io) e <strong>AAB</strong> (il formato richiesto da Google Play). La prima volta l'editor ti guida in quattro passaggi e scarica il necessario per te:</p>
+  <ol>
+    <li><strong>Strumenti Android di Ren'Py (RAPT)</strong>, circa 60 MB, nella tua cartella di Ren'Py.</li>
+    <li><strong>Java 21</strong>, circa 190 MB, solo per l'editor.</li>
+    <li><strong>SDK Android</strong>, diverse centinaia di MB. Prima di installarlo devi accettare i termini di Google (puoi leggerli dalla finestra stessa).</li>
+    <li><strong>Chiavi di firma:</strong> scrivi il tuo nome o quello del tuo studio e premi <em>Crea</em>. Vengono salvate nella cartella del progetto come <code>android.keystore</code> e <code>bundle.keystore</code>.</li>
+  </ol>
+  <div class="man-note"><strong>Importante:</strong> fai un backup delle chiavi. Se le perdi, non potrai pubblicare aggiornamenti della tua app.</div>
+  <p>Poi compila i <strong>dati dell'app</strong>: nome, nome breve (sotto l'icona), <em>pacchetto</em> (per esempio <code>com.tuostudio.tuogioco</code>; non si può cambiare dopo la pubblicazione), versione, numero di versione (un intero che deve aumentare a ogni aggiornamento su Google Play) e orientamento. Vengono salvati in <code>android.json</code>.</p>
+  <p>La prima compilazione per Android richiede un po' di tempo perché scarica altri strumenti; le successive sono molto più rapide.</p>
   <h3>Provare il gioco</h3>
   <p><strong>{{launch_project}}</strong>, nella barra laterale, apre la tua novel con Ren'Py così com'è salvata. Se ci sono errori nel codice, Ren'Py li mostra all'avvio.</p>
 </section>

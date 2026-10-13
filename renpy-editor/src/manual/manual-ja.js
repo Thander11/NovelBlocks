@@ -201,6 +201,17 @@
   </ul>
   <p>出力先のフォルダーを選んで<em>{{build_start}}</em>を押します。進行状況が表示されます。その間ダイアログを隠しても（終わると通知されます）、中止してもかまいません。完了したら<em>{{build_open_folder}}</em>でファイルを開けます。</p>
   <p>ノベルにパッチがある場合は、ここでビルドするバージョンも選びます（<a href="#patch">パッチ</a>を参照）。</p>
+  <h3>Android</h3>
+  <p>同じダイアログで <strong>APK</strong>（スマホでのテストや、itch.io などでの自分での配布向け）と <strong>AAB</strong>（Google Play が求める形式）を選べます。初回はエディターが 4 つのステップを案内し、必要なものをダウンロードします：</p>
+  <ol>
+    <li><strong>Ren'Py の Android ツール（RAPT）</strong>：約 60 MB。Ren'Py のフォルダーに入ります。</li>
+    <li><strong>Java 21</strong>：約 190 MB。エディター専用です。</li>
+    <li><strong>Android SDK</strong>：数百 MB。インストール前に Google の利用規約への同意が必要です（ダイアログから読めます）。</li>
+    <li><strong>署名キー：</strong>あなたまたはスタジオの名前を入力して<em>作成</em>を押します。プロジェクトのフォルダーに <code>android.keystore</code> と <code>bundle.keystore</code> として保存されます。</li>
+  </ol>
+  <div class="man-note"><strong>重要：</strong>キーをバックアップしてください。失うと、アプリのアップデートを公開できなくなります。</div>
+  <p>次に<strong>アプリの情報</strong>を入力します：アプリ名、短い名前（アイコンの下）、<em>パッケージ名</em>（例：<code>com.yourstudio.yourgame</code>。公開後は変更できません）、バージョン、バージョン番号（Google Play でのアップデートごとに増やす整数）、画面の向き。これらは <code>android.json</code> に保存されます。</p>
+  <p>最初の Android ビルドは追加のツールをダウンロードするため時間がかかります。2 回目以降はずっと速くなります。</p>
   <h3>ゲームのテスト</h3>
   <p>サイドバーの<strong>{{launch_project}}</strong>は、保存されている状態のノベルを Ren'Py で開きます。コードにエラーがあれば、起動時に Ren'Py が表示します。</p>
 </section>

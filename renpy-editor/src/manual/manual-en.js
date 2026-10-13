@@ -201,6 +201,17 @@
   </ul>
   <p>Choose the destination folder and click <em>Build</em>. You'll see the progress; you can hide the dialog meanwhile (it tells you when it's done) or stop it. When it finishes, <em>Open folder</em> takes you to the files.</p>
   <p>If your novel has a patch, this is also where you choose which version to build (see <a href="#patch">Patches</a>).</p>
+  <h3>Android</h3>
+  <p>In the same dialog you can tick <strong>APK</strong> (to test on a phone or hand it out yourself, for example on itch.io) and <strong>AAB</strong> (the format Google Play asks for). The first time, the editor walks you through four steps and downloads what's needed for you:</p>
+  <ol>
+    <li><strong>Ren'Py's Android tools (RAPT)</strong>, about 60 MB, inside your Ren'Py folder.</li>
+    <li><strong>Java 21</strong>, about 190 MB, only for the editor.</li>
+    <li><strong>Android SDK</strong>, several hundred MB. Before installing it you have to accept Google's terms (you can read them from the dialog itself).</li>
+    <li><strong>Signing keys:</strong> type your name or your studio's and press <em>Create</em>. They are saved in the project folder as <code>android.keystore</code> and <code>bundle.keystore</code>.</li>
+  </ol>
+  <div class="man-note"><strong>Important:</strong> back up the keys. If you lose them, you won't be able to publish updates of your app.</div>
+  <p>Then fill in the <strong>app details</strong>: name, short name (under the icon), <em>package</em> (for example <code>com.yourstudio.yourgame</code>; it can't change once published), version, version number (a whole number that must go up with every Google Play update) and orientation. They are saved in <code>android.json</code>.</p>
+  <p>The first Android build takes a while because it downloads more tools; later ones are much faster.</p>
   <h3>Testing the game</h3>
   <p><strong>Launch game</strong>, in the sidebar, opens your novel with Ren'Py as it is saved. If there are errors in the code, Ren'Py shows them when it starts.</p>
 </section>

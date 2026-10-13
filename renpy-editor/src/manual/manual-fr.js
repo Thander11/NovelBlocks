@@ -201,6 +201,17 @@
   </ul>
   <p>Choisis le dossier de destination et clique sur <em>{{build_start}}</em>. Tu vois la progression ; tu peux masquer la fenêtre pendant ce temps (tu seras prévenu à la fin) ou l'arrêter. À la fin, <em>{{build_open_folder}}</em> t'amène aux fichiers.</p>
   <p>Si ton roman a un patch, c'est aussi ici que tu choisis la version (voir <a href="#patch">Patchs</a>).</p>
+  <h3>Android</h3>
+  <p>Dans le même dialogue, tu peux cocher <strong>APK</strong> (pour tester sur un téléphone ou le distribuer toi-même, par exemple sur itch.io) et <strong>AAB</strong> (le format demandé par Google Play). La première fois, l'éditeur te guide en quatre étapes et télécharge ce qu'il faut pour toi :</p>
+  <ol>
+    <li><strong>Outils Android de Ren'Py (RAPT)</strong>, environ 60 Mo, dans ton dossier Ren'Py.</li>
+    <li><strong>Java 21</strong>, environ 190 Mo, uniquement pour l'éditeur.</li>
+    <li><strong>SDK Android</strong>, plusieurs centaines de Mo. Avant de l'installer, tu dois accepter les conditions de Google (tu peux les lire depuis le dialogue).</li>
+    <li><strong>Clés de signature :</strong> écris ton nom ou celui de ton studio et clique sur <em>Créer</em>. Elles sont enregistrées dans le dossier du projet sous <code>android.keystore</code> et <code>bundle.keystore</code>.</li>
+  </ol>
+  <div class="man-note"><strong>Important :</strong> fais une sauvegarde des clés. Si tu les perds, tu ne pourras plus publier de mises à jour de ton application.</div>
+  <p>Remplis ensuite les <strong>infos de l'application</strong> : nom, nom court (sous l'icône), <em>paquet</em> (par exemple <code>com.tonstudio.tonjeu</code> ; il ne peut plus changer après la publication), version, numéro de version (un entier qui doit augmenter à chaque mise à jour sur Google Play) et orientation. Elles sont enregistrées dans <code>android.json</code>.</p>
+  <p>La première compilation Android prend du temps car elle télécharge d'autres outils ; les suivantes sont bien plus rapides.</p>
   <h3>Tester le jeu</h3>
   <p><strong>{{launch_project}}</strong>, dans la barre latérale, ouvre ton roman avec Ren'Py tel qu'il est enregistré. S'il y a des erreurs dans le code, Ren'Py les affiche au démarrage.</p>
 </section>

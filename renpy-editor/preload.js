@@ -36,6 +36,15 @@ contextBridge.exposeInMainWorld('api', {
   patchMoveImage: (name, toPatch) => ipcRenderer.invoke('patch-move-image', name, toPatch),
   patchWriteOwner: (owner, code) => ipcRenderer.invoke('patch-write-owner', owner, code),
 
+  // Android: setting up Ren'Py's Android tools and building packages
+  androidStatus: () => ipcRenderer.invoke('android-status'),
+  androidSetup: (step, options) => ipcRenderer.invoke('android-setup', step, options),
+  androidSaveConfig: (cfg) => ipcRenderer.invoke('android-save-config', cfg),
+  androidBuild: (opts) => ipcRenderer.invoke('android-build', opts),
+  androidCancel: () => ipcRenderer.invoke('android-cancel'),
+  androidOpenTerms: () => ipcRenderer.invoke('android-open-terms'),
+  onAndroidProgress: (cb) => ipcRenderer.on('android-progress', (_, msg) => cb(msg)),
+
   // Updates of the editor itself
   updateStatus: () => ipcRenderer.invoke('update-status'),
   updateCheck: () => ipcRenderer.invoke('update-check'),

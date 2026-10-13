@@ -41,10 +41,13 @@
       "updater.js",
       "report.config.json",
       "src/**/*",
-      "package.json"
+      "package.json",
+      "android.js",
+      "android-helper.py"
     ],
     "asarUnpack": [
-      "mcp-bridge.js"
+      "mcp-bridge.js",
+      "android-helper.py"
     ],
     "win": {
       "target": "nsis",

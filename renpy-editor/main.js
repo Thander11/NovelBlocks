@@ -8,6 +8,7 @@ const { createMcpServer } = require('./mcp-server');
 const { buildMcpTools, INSTRUCTIONS: MCP_INSTRUCTIONS } = require('./mcp-tools');
 const { createChangeLog } = require('./mcp-changes');
 const { setupUpdates } = require('./updater');
+const { setupAndroid } = require('./android');
 
 let mainWindow = null;
 let declWindow = null;
@@ -107,6 +108,12 @@ app.whenReady().then(() => {
   createMainWindow();
   if (settings.claude.enabled) startClaudeServer();
   setupUpdates({ getWindow: () => mainWindow });
+  setupAndroid({
+    getWindow: () => mainWindow,
+    getProjectRoot: () => currentGamePath ? getProjectRootFromGamePath(currentGamePath) : '',
+    getRenpyExecutable: () => settings.renpyExecutablePath,
+    renpyBuildCommand, readGameInfo: () => readGameInfo()
+  });
 });
 
 app.on('window-all-closed', () => {

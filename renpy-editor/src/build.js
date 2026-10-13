@@ -21,6 +21,7 @@ async function openBuildDialog() {
   const defaults = await window.api.getBuildDefaults();
   if (!defaults.building) {
     await loadPatchInfo();
+    await loadAndroidState();
     buildState = 'setup';
     buildResult = null;
     buildLog = [];
@@ -35,8 +36,9 @@ function closeBuildDialog() {
   document.getElementById('build-overlay').classList.remove('open');
 }
 
+// The desktop systems (Android has its own fieldset)
 function selectedBuildPackages() {
-  return [...document.querySelectorAll('.build-pkg input:checked')].map(i => i.value);
+  return [...document.querySelectorAll('.build-pkgs:not(.build-android) .build-pkg input:checked')].map(i => i.value);
 }
 
 function renderBuildDialog() {
@@ -54,6 +56,7 @@ function renderBuildDialog() {
             <span class="build-pkg-hint">${t('build_pkg_' + o.id + '_hint')}</span></span>
           </label>`).join('')}
       </fieldset>
+      ${buildAndroidHtml()}
       ${buildPatchHtml()}
       <div class="form-group">
         <div class="form-label">${t('build_destination')}</div>
@@ -66,6 +69,7 @@ function renderBuildDialog() {
     footer.innerHTML = `
       <button class="btn btn-secondary" onclick="closeBuildDialog()">${t('cancel')}</button>
       <button class="btn btn-primary" id="build-start-btn" onclick="startBuild()">${icon('package', 15)}${t('build_start')}</button>`;
+    renderAndroidPanel();
     onBuildPackageChange();
     renderBuildPatchNotes();
     return;
@@ -101,7 +105,10 @@ function renderBuildDialog() {
 
 function onBuildPackageChange() {
   const btn = document.getElementById('build-start-btn');
-  if (btn) btn.disabled = !selectedBuildPackages().length;
+  // Android counts once its tools and details are ready
+  const android = androidWanted() && androidReady();
+  const blocked = androidWanted() && !androidReady();
+  if (btn) btn.disabled = blocked || (!selectedBuildPackages().length && !android);
 }
 
 async function pickBuildFolder() {
@@ -113,12 +120,21 @@ async function pickBuildFolder() {
 
 async function startBuild() {
   const packages = selectedBuildPackages();
-  if (!packages.length) return;
+  const android = androidWanted() && androidReady();
+  if (!packages.length && !android) return;
+  if (android && !await saveAndroidConfig()) return;
   BUILD_OPTIONS.forEach(o => { o.checked = packages.includes(o.id); });
   buildState = 'building';
   buildLog = [];
   renderBuildDialog();
-  const r = await window.api.buildGame({ packages, destination: buildDestination, patchMode: patchEnabled() ? buildPatchMode : undefined });
+  let r = { ok: true, files: [], destination: buildDestination };
+  if (packages.length) r = await window.api.buildGame({ packages, destination: buildDestination, patchMode: patchEnabled() ? buildPatchMode : undefined });
+  // Android after the desktop systems, with Ren'Py's own android_build
+  if (r.ok && android) {
+    const a = await window.api.androidBuild({ apk: androidSel.apk, aab: androidSel.aab, destination: buildDestination });
+    r = { ...r, ok: a.ok, cancelled: a.error === 'cancelled', files: [...(r.files || []), ...(a.files || [])], destination: buildDestination };
+    if (!a.ok) { r.message = t('android_build_failed'); if (a.log) buildLog.push(...a.log); }
+  }
   buildResult = r;
   if (r.log && !buildLog.length) buildLog = r.log;
   buildState = r.ok ? 'done' : 'error';
@@ -132,6 +148,7 @@ async function startBuild() {
 
 async function cancelBuild() {
   await window.api.cancelBuild();
+  await window.api.androidCancel();
 }
 
 window.api.onBuildProgress((msg) => {
