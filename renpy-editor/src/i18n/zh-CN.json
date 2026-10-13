@@ -5,6 +5,8 @@
   "block_condition": "条件",
   "declarations": "声明",
   "manual": "使用手册",
+  "sidebar_hide": "隐藏侧边栏（Ctrl+B）",
+  "sidebar_show": "显示侧边栏（Ctrl+B）",
   "settings": "设置",
   "launching_project": "正在启动项目...",
   "project_launched": "项目已在 Ren'Py 中启动",

@@ -5,6 +5,8 @@
   "block_condition": "條件",
   "declarations": "宣告",
   "manual": "使用手冊",
+  "sidebar_hide": "隱藏側邊欄（Ctrl+B）",
+  "sidebar_show": "顯示側邊欄（Ctrl+B）",
   "settings": "設定",
   "launching_project": "正在啟動專案...",
   "project_launched": "專案已在 Ren'Py 中啟動",

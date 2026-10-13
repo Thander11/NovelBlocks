@@ -28,6 +28,7 @@
     <li><strong>Cabecera:</strong> el archivo <code>.rpy</code> activo, el <em>Label destino</em>, el menú <em>Mostrar</em> para elegir qué paneles ver, <em>Limpiar todo</em> y <em>Guardar en archivo</em>.</li>
     <li><strong>Zona de trabajo:</strong> la lista de archivos, la paleta de bloques, la lista de bloques de la escena, la vista previa de la escena y la vista previa del código.</li>
   </ul>
+  <p>La barra lateral se puede <strong>plegar</strong> con el botón junto al nombre del editor o con <kbd>Ctrl</kbd>+<kbd>B</kbd>, para tener más espacio. Plegada, sale sola al llevar el ratón al borde izquierdo de la ventana y se esconde al apartarlo.</p>
   <div class="man-tip"><strong>Consejo:</strong> pulsa <kbd>F1</kbd> en cualquier momento para abrir este manual.</div>
 </section>
 

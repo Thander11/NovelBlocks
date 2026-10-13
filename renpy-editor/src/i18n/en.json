@@ -5,6 +5,8 @@
   "block_condition": "Condition",
   "declarations": "Declarations",
   "manual": "Manual",
+  "sidebar_hide": "Hide sidebar (Ctrl+B)",
+  "sidebar_show": "Show sidebar (Ctrl+B)",
   "settings": "Settings",
   "launching_project": "Launching project...",
   "project_launched": "Project launched in Ren'Py",

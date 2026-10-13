@@ -235,6 +235,7 @@ async function changeLanguage(lang) {
   renderSpellcheckSettings();
   renderClaudeSettings();
   if (document.getElementById('manual-screen').classList.contains('open')) renderManual();
+  if (typeof applySidebar === 'function') applySidebar();
   renderBlocks();
   renderAssetBrowser();
   updateCodePreview();
@@ -4852,6 +4853,7 @@ function savePanelSize(r, v) {
   
   projectsDirectory = s.projectsDirectory || '';
   panelVisibility = { ...panelVisibility, ...(s.panels || {}) };
+  if (typeof initSidebar === 'function') initSidebar(s.sidebarCollapsed);
   applyPanelVisibility();
 
   applyI18n();

@@ -5,6 +5,8 @@
   "block_condition": "Condizione",
   "declarations": "Dichiarazioni",
   "manual": "Manuale",
+  "sidebar_hide": "Nascondi la barra laterale (Ctrl+B)",
+  "sidebar_show": "Mostra la barra laterale (Ctrl+B)",
   "settings": "Impostazioni",
   "launching_project": "Avvio del progetto...",
   "project_launched": "Progetto avviato in Ren'Py",

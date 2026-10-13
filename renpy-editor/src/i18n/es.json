@@ -4,6 +4,8 @@
   "launch_project": "Iniciar juego",
   "declarations": "Declaraciones",
   "manual": "Manual",
+  "sidebar_hide": "Ocultar barra lateral (Ctrl+B)",
+  "sidebar_show": "Mostrar barra lateral (Ctrl+B)",
   "settings": "Ajustes",
   "launching_project": "Iniciando proyecto...",
   "project_launched": "Proyecto iniciado en Ren'Py",

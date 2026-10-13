@@ -28,6 +28,7 @@
     <li><strong>ヘッダー：</strong>作業中の <code>.rpy</code> ファイル、<em>{{target_label}}</em>、表示するパネルを選ぶ<em>{{panels_show}}</em>メニュー、<em>{{clear_all}}</em>、<em>{{save_to_file}}</em>。</li>
     <li><strong>作業エリア：</strong>ファイル一覧、ブロックパレット、シーンのブロック一覧、シーンのプレビュー、コードのプレビュー。</li>
   </ul>
+  <p>エディター名の横のボタンか <kbd>Ctrl</kbd>+<kbd>B</kbd> でサイドバーを<strong>折りたたむ</strong>と、作業スペースが広がります。折りたたんだ状態でマウスをウィンドウの左端に持っていくと表示され、離すと隠れます。</p>
   <div class="man-tip"><strong>ヒント：</strong>いつでも <kbd>F1</kbd> を押すとこのマニュアルが開きます。</div>
 </section>
 
