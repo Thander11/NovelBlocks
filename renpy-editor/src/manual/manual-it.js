@@ -28,7 +28,7 @@
     <li><strong>Intestazione:</strong> il file <code>.rpy</code> attivo, il <em>{{target_label}}</em>, il menu <em>{{panels_show}}</em> per scegliere i pannelli, <em>{{clear_all}}</em> e <em>{{save_to_file}}</em>.</li>
     <li><strong>Area di lavoro:</strong> l'elenco dei file, la tavolozza dei blocchi, l'elenco dei blocchi della scena, l'anteprima della scena e l'anteprima del codice.</li>
   </ul>
-  <p>La barra laterale si può <strong>ripiegare</strong> con il pulsante accanto al nome dell'editor o con <kbd>Ctrl</kbd>+<kbd>B</kbd>, per avere più spazio. Ripiegata, compare quando porti il mouse sul bordo sinistro della finestra e si nasconde quando ti allontani.</p>
+  <p>La barra laterale si può <strong>ripiegare</strong> con il pulsante accanto al nome dell'editor o con <kbd>Ctrl</kbd>+<kbd>B</kbd>, per avere più spazio. Ripiegata, compare quando porti il mouse sul bordo sinistro della finestra e si nasconde quando ti allontani. Mentre è aperta, il pulsante <strong>Fissa</strong> la rimette fissa a sinistra.</p>
   <div class="man-tip"><strong>Consiglio:</strong> premi <kbd>F1</kbd> in qualsiasi momento per aprire questo manuale.</div>
 </section>
 

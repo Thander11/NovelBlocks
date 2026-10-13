@@ -28,7 +28,7 @@
     <li><strong>顶部栏：</strong>当前的 <code>.rpy</code> 文件、<em>{{target_label}}</em>、用于选择面板的<em>{{panels_show}}</em>菜单、<em>{{clear_all}}</em>和<em>{{save_to_file}}</em>。</li>
     <li><strong>工作区：</strong>文件列表、块面板、场景的块列表、场景预览和代码预览。</li>
   </ul>
-  <p>可以用编辑器名称旁的按钮或 <kbd>Ctrl</kbd>+<kbd>B</kbd> <strong>收起</strong>侧边栏，以腾出更多空间。收起后，把鼠标移到窗口左边缘时它会自动出现，移开后再隐藏。</p>
+  <p>可以用编辑器名称旁的按钮或 <kbd>Ctrl</kbd>+<kbd>B</kbd> <strong>收起</strong>侧边栏，以腾出更多空间。收起后，把鼠标移到窗口左边缘时它会自动出现，移开后再隐藏。侧边栏滑出时，点击<strong>固定</strong>按钮可将其重新固定在左侧。</p>
   <div class="man-tip"><strong>提示：</strong>随时按 <kbd>F1</kbd> 打开本手册。</div>
 </section>
 

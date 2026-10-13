@@ -28,7 +28,7 @@
     <li><strong>Kopfzeile:</strong> die aktive <code>.rpy</code>-Datei, das <em>{{target_label}}</em>, das Menü <em>{{panels_show}}</em> zur Auswahl der Bereiche, <em>{{clear_all}}</em> und <em>{{save_to_file}}</em>.</li>
     <li><strong>Arbeitsbereich:</strong> die Dateiliste, die Blockpalette, die Blockliste der Szene, die Szenenvorschau und die Codevorschau.</li>
   </ul>
-  <p>Die Seitenleiste lässt sich mit dem Knopf neben dem Namen des Editors oder mit <kbd>Strg</kbd>+<kbd>B</kbd> <strong>einklappen</strong>, um mehr Platz zu haben. Eingeklappt erscheint sie, wenn du die Maus an den linken Fensterrand bewegst, und verschwindet wieder, wenn du sie wegbewegst.</p>
+  <p>Die Seitenleiste lässt sich mit dem Knopf neben dem Namen des Editors oder mit <kbd>Strg</kbd>+<kbd>B</kbd> <strong>einklappen</strong>, um mehr Platz zu haben. Eingeklappt erscheint sie, wenn du die Maus an den linken Fensterrand bewegst, und verschwindet wieder, wenn du sie wegbewegst. Solange sie ausgefahren ist, heftet die Schaltfläche <strong>Anheften</strong> sie wieder fest links an.</p>
   <div class="man-tip"><strong>Tipp:</strong> Drücke jederzeit <kbd>F1</kbd>, um dieses Handbuch zu öffnen.</div>
 </section>
 

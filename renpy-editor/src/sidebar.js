@@ -16,6 +16,8 @@ function applySidebar() {
   const label = t(sidebarCollapsed ? 'sidebar_show' : 'sidebar_hide');
   btn.title = label;
   btn.setAttribute('aria-label', label);
+  // Folded, the button pins it back in place, and says so
+  document.getElementById('sb-collapse-text').textContent = sidebarCollapsed ? t('sidebar_pin') : '';
 }
 
 function toggleSidebar(collapse = !sidebarCollapsed) {
@@ -32,7 +34,10 @@ function peekSidebar(show) {
   // A short wait, so crossing the edge by accident doesn't make it flicker
   sidebarHideTimer = setTimeout(() => {
     const sidebar = document.getElementById('sidebar');
-    if (!sidebar.matches(':hover') && !sidebar.contains(document.activeElement)) app.classList.remove('sb-peek');
+    // Only the keyboard keeps it out: a click inside leaves focus there, and that shouldn't
+    if (sidebar.matches(':hover') || sidebar.querySelector(':focus-visible')) return;
+    app.classList.remove('sb-peek');
+    if (sidebar.contains(document.activeElement)) document.activeElement.blur();
   }, 300);
 }
 

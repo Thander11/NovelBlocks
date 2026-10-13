@@ -28,7 +28,7 @@
     <li><strong>Cabeçalho:</strong> o arquivo <code>.rpy</code> ativo, o <em>{{target_label}}</em>, o menu <em>{{panels_show}}</em> para escolher os painéis, <em>{{clear_all}}</em> e <em>{{save_to_file}}</em>.</li>
     <li><strong>Área de trabalho:</strong> a lista de arquivos, a paleta de blocos, a lista de blocos da cena, a pré-visualização da cena e a do código.</li>
   </ul>
-  <p>A barra lateral pode ser <strong>recolhida</strong> com o botão ao lado do nome do editor ou com <kbd>Ctrl</kbd>+<kbd>B</kbd>, para ganhar espaço. Recolhida, ela aparece quando você leva o mouse à borda esquerda da janela e some quando você o afasta.</p>
+  <p>A barra lateral pode ser <strong>recolhida</strong> com o botão ao lado do nome do editor ou com <kbd>Ctrl</kbd>+<kbd>B</kbd>, para ganhar espaço. Recolhida, ela aparece quando você leva o mouse à borda esquerda da janela e some quando você o afasta. Enquanto ela está aberta, o botão <strong>Fixar</strong> a deixa fixa de novo à esquerda.</p>
   <div class="man-tip"><strong>Dica:</strong> aperte <kbd>F1</kbd> a qualquer momento para abrir este manual.</div>
 </section>
 

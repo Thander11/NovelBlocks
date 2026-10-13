@@ -28,7 +28,7 @@
     <li><strong>Header:</strong> the active <code>.rpy</code> file, the <em>Target label</em>, the <em>Show</em> menu to choose which panels to see, <em>Clear all</em> and <em>Save to file</em>.</li>
     <li><strong>Work area:</strong> the file list, the block palette, the scene's block list, the scene preview and the code preview.</li>
   </ul>
-  <p>The sidebar can be <strong>folded</strong> with the button next to the editor's name or with <kbd>Ctrl</kbd>+<kbd>B</kbd>, to get more room. Folded, it comes out when you move the mouse to the left edge of the window and hides when you move away.</p>
+  <p>The sidebar can be <strong>folded</strong> with the button next to the editor's name or with <kbd>Ctrl</kbd>+<kbd>B</kbd>, to get more room. Folded, it comes out when you move the mouse to the left edge of the window and hides when you move away. While it is out, the <strong>Pin</strong> button puts it back in place on the left.</p>
   <div class="man-tip"><strong>Tip:</strong> press <kbd>F1</kbd> at any time to open this manual.</div>
 </section>
 

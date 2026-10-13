@@ -28,7 +28,7 @@
     <li><strong>En-tête :</strong> le fichier <code>.rpy</code> actif, le <em>{{target_label}}</em>, le menu <em>{{panels_show}}</em> pour choisir les panneaux, <em>{{clear_all}}</em> et <em>{{save_to_file}}</em>.</li>
     <li><strong>Zone de travail :</strong> la liste des fichiers, la palette de blocs, la liste des blocs de la scène, l'aperçu de la scène et l'aperçu du code.</li>
   </ul>
-  <p>La barre latérale peut être <strong>repliée</strong> avec le bouton à côté du nom de l'éditeur ou avec <kbd>Ctrl</kbd>+<kbd>B</kbd>, pour gagner de la place. Repliée, elle apparaît quand tu amènes la souris au bord gauche de la fenêtre et se cache quand tu t'en éloignes.</p>
+  <p>La barre latérale peut être <strong>repliée</strong> avec le bouton à côté du nom de l'éditeur ou avec <kbd>Ctrl</kbd>+<kbd>B</kbd>, pour gagner de la place. Repliée, elle apparaît quand tu amènes la souris au bord gauche de la fenêtre et se cache quand tu t'en éloignes. Quand elle est sortie, le bouton <strong>Épingler</strong> la fixe de nouveau à gauche.</p>
   <div class="man-tip"><strong>Astuce :</strong> appuie sur <kbd>F1</kbd> à tout moment pour ouvrir ce manuel.</div>
 </section>
 

@@ -28,7 +28,7 @@
     <li><strong>頂端列：</strong>目前的 <code>.rpy</code> 檔案、<em>{{target_label}}</em>、用來選擇面板的<em>{{panels_show}}</em>選單、<em>{{clear_all}}</em>和<em>{{save_to_file}}</em>。</li>
     <li><strong>工作區：</strong>檔案清單、區塊面板、場景的區塊清單、場景預覽和程式碼預覽。</li>
   </ul>
-  <p>可以用編輯器名稱旁的按鈕或 <kbd>Ctrl</kbd>+<kbd>B</kbd> <strong>收合</strong>側邊欄，以騰出更多空間。收合後，把滑鼠移到視窗左邊緣時它會自動出現，移開後再隱藏。</p>
+  <p>可以用編輯器名稱旁的按鈕或 <kbd>Ctrl</kbd>+<kbd>B</kbd> <strong>收合</strong>側邊欄，以騰出更多空間。收合後，把滑鼠移到視窗左邊緣時它會自動出現，移開後再隱藏。側邊欄滑出時，點選<strong>固定</strong>按鈕可將其重新固定在左側。</p>
   <div class="man-tip"><strong>提示：</strong>隨時按 <kbd>F1</kbd> 開啟本手冊。</div>
 </section>
 

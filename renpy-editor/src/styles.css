@@ -1575,3 +1575,10 @@ button:disabled, input:disabled, select:disabled { opacity: 0.55; cursor: not-al
 .android-config { display: flex; flex-direction: column; gap: 2px; }
 .android-config .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 #android-config-error:empty { display: none; }
+
+#app.sb-collapsed .sb-collapse {
+  width: auto; padding: 0 9px; gap: 5px; display: inline-flex; align-items: center;
+  background: var(--accent); color: var(--on-accent); font-size: 12px; font-weight: 700;
+}
+#app.sb-collapsed .sb-collapse:hover, #app.sb-collapsed .sb-collapse:focus-visible { background: var(--accent2); color: var(--on-accent); }
+.sb-collapse-text:empty { display: none; }
