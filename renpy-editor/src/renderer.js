@@ -934,7 +934,7 @@ function renderBlocks() {
     `<button class="block-btn${extra}" onclick="event.stopPropagation(); ${fn}" title="${t(key)}">${icon(iconName, 14)}<span>${t(key)}</span></button>`;
   list.innerHTML = blocks.map((b, i) => {
     const meta = blockMeta(b);
-    return `<div class="block cat-${meta.cat}${i === selected ? ' preview-selected' : ''}" id="block-${i}" draggable="true" tabindex="0"
+    return blockGapHtml(i) + `<div class="block cat-${meta.cat}${i === selected ? ' preview-selected' : ''}" id="block-${i}" draggable="true" tabindex="0"
       onclick="selectPreviewBlock(${i})" ondblclick="editBlock(${i})" onkeydown="onBlockKeydown(event, ${i})"
       ondragstart="onBlockDragStart(event,${i})" ondragend="onBlockDragEnd(event)"
       ondragover="onBlockDragOver(event,${i})" ondragleave="onBlockDragLeave(event)"
@@ -956,7 +956,7 @@ function renderBlocks() {
         ${action(`deleteBlock(${i})`, 'trash', 'btn_delete', ' danger')}
       </div>
     </div>`;
-  }).join('');
+  }).join('') + blockGapHtml(blocks.length);
   updateScenePreview();
 }
 
@@ -975,14 +975,27 @@ function onBlockDragEnd(e) {
 }
 function onBlockDragOver(e, idx) {
   e.preventDefault();
+  if (paletteDragType) {
+    e.dataTransfer.dropEffect = 'copy';
+    const after = paletteDropIndex(e, idx) > idx;
+    clearDropMarks();
+    e.currentTarget.classList.add(after ? 'drag-over-after' : 'drag-over');
+    return;
+  }
   e.dataTransfer.dropEffect = 'move';
   const el = document.getElementById('block-' + idx);
   if (idx !== dragSrcIndex && el) el.classList.add('drag-over');
 }
-function onBlockDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
+function onBlockDragLeave(e) { e.currentTarget.classList.remove('drag-over', 'drag-over-after'); }
 function onBlockDrop(e, targetIdx) {
   e.preventDefault();
   e.currentTarget.classList.remove('drag-over');
+  if (paletteDragType) {
+    const type = paletteDragType, at = paletteDropIndex(e, targetIdx);
+    onPaletteDragEnd();
+    addBlockAt(type, at);
+    return;
+  }
   if (dragSrcIndex === null || dragSrcIndex === targetIdx) return;
   const [moved] = blocks.splice(dragSrcIndex, 1);
   blocks.splice(targetIdx, 0, moved);
@@ -2298,6 +2311,7 @@ function closeModal() {
     return;
   }
   pendingBlock = {};
+  if (typeof insertAt !== 'undefined') insertAt = null;
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -3808,6 +3822,10 @@ async function saveBlock() {
 
   if (editingIndex >= 0) {
     blocks[editingIndex] = b;
+  } else if (insertAt !== null) {
+    blocks.splice(insertAt, 0, b);
+    previewIndex = insertAt;
+    insertAt = null;
   } else if (previewIndex >= 0 && previewIndex < blocks.length - 1) {
     blocks.splice(previewIndex + 1, 0, b);
     previewIndex++;

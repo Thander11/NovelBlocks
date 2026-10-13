@@ -248,6 +248,7 @@
   "btn_duplicate_end": "Duplicate to end",
   "btn_edit": "Edit",
   "btn_delete": "Delete",
+  "insert_block_here": "Add a block here",
   "palette_title": "Add block",
   "block_group_text": "Text",
   "block_group_scene": "Scene",

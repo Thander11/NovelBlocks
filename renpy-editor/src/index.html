@@ -155,43 +155,43 @@
         <div class="palette-title" data-i18n="palette_title">Añadir bloque</div>
         <div class="palette-group cat-text">
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_text">Texto</span></div>
-          <button class="palette-btn" onclick="addBlock('dialogue')"><span class="icon" data-icon="dialogue"></span><span data-i18n="block_dialogue">Diálogo</span></button>
-          <button class="palette-btn" onclick="addBlock('narration')"><span class="icon" data-icon="narration"></span><span data-i18n="block_narration">Narración</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'dialogue')" ondragend="onPaletteDragEnd()" onclick="addBlock('dialogue')"><span class="icon" data-icon="dialogue"></span><span data-i18n="block_dialogue">Diálogo</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'narration')" ondragend="onPaletteDragEnd()" onclick="addBlock('narration')"><span class="icon" data-icon="narration"></span><span data-i18n="block_narration">Narración</span></button>
         </div>
         <div class="palette-group cat-scene">
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_scene">Escena</span></div>
-          <button class="palette-btn" onclick="addBlock('scene')"><span class="icon" data-icon="scene"></span><span data-i18n="block_scene">Cambio de escena</span></button>
-          <button class="palette-btn" onclick="addBlock('show')"><span class="icon" data-icon="show"></span><span data-i18n="block_show">Mostrar sprite</span></button>
-          <button class="palette-btn" onclick="addBlock('show_multi')"><span class="icon" data-icon="show_multi"></span><span data-i18n="block_show_multi">Mostrar varios</span></button>
-          <button class="palette-btn" onclick="addBlock('hide')"><span class="icon" data-icon="hide"></span><span data-i18n="block_hide">Ocultar sprite</span></button>
-          <button class="palette-btn" onclick="addBlock('hide_multi')"><span class="icon" data-icon="hide_multi"></span><span data-i18n="block_hide_multi">Ocultar varios</span></button>
-          <button class="palette-btn" onclick="addBlock('solid')"><span class="icon" data-icon="solid"></span><span data-i18n="block_solid">Solid</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'scene')" ondragend="onPaletteDragEnd()" onclick="addBlock('scene')"><span class="icon" data-icon="scene"></span><span data-i18n="block_scene">Cambio de escena</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'show')" ondragend="onPaletteDragEnd()" onclick="addBlock('show')"><span class="icon" data-icon="show"></span><span data-i18n="block_show">Mostrar sprite</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'show_multi')" ondragend="onPaletteDragEnd()" onclick="addBlock('show_multi')"><span class="icon" data-icon="show_multi"></span><span data-i18n="block_show_multi">Mostrar varios</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'hide')" ondragend="onPaletteDragEnd()" onclick="addBlock('hide')"><span class="icon" data-icon="hide"></span><span data-i18n="block_hide">Ocultar sprite</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'hide_multi')" ondragend="onPaletteDragEnd()" onclick="addBlock('hide_multi')"><span class="icon" data-icon="hide_multi"></span><span data-i18n="block_hide_multi">Ocultar varios</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'solid')" ondragend="onPaletteDragEnd()" onclick="addBlock('solid')"><span class="icon" data-icon="solid"></span><span data-i18n="block_solid">Solid</span></button>
         </div>
         <div class="palette-group cat-flow">
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_flow">Flujo</span></div>
-          <button class="palette-btn" onclick="addBlock('menu')"><span class="icon" data-icon="menu"></span><span data-i18n="block_menu">Decisión</span></button>
-          <button class="palette-btn" onclick="addBlock('condition')"><span class="icon" data-icon="condition"></span><span data-i18n="block_condition">Condición</span></button>
-          <button class="palette-btn" onclick="addBlock('jump')"><span class="icon" data-icon="jump"></span><span data-i18n="block_jump">Jump</span></button>
-          <button class="palette-btn" onclick="addBlock('call')"><span class="icon" data-icon="call"></span><span data-i18n="block_call">Call</span></button>
-          <button class="palette-btn" onclick="addBlock('label')"><span class="icon" data-icon="label"></span><span data-i18n="block_label">Label</span></button>
-          <button class="palette-btn" onclick="addBlock('pause')"><span class="icon" data-icon="pause"></span><span data-i18n="block_pause">Pausa</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'menu')" ondragend="onPaletteDragEnd()" onclick="addBlock('menu')"><span class="icon" data-icon="menu"></span><span data-i18n="block_menu">Decisión</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'condition')" ondragend="onPaletteDragEnd()" onclick="addBlock('condition')"><span class="icon" data-icon="condition"></span><span data-i18n="block_condition">Condición</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'jump')" ondragend="onPaletteDragEnd()" onclick="addBlock('jump')"><span class="icon" data-icon="jump"></span><span data-i18n="block_jump">Jump</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'call')" ondragend="onPaletteDragEnd()" onclick="addBlock('call')"><span class="icon" data-icon="call"></span><span data-i18n="block_call">Call</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'label')" ondragend="onPaletteDragEnd()" onclick="addBlock('label')"><span class="icon" data-icon="label"></span><span data-i18n="block_label">Label</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'pause')" ondragend="onPaletteDragEnd()" onclick="addBlock('pause')"><span class="icon" data-icon="pause"></span><span data-i18n="block_pause">Pausa</span></button>
         </div>
         <div class="palette-group cat-audio">
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_audio">Audio</span></div>
-          <button class="palette-btn" onclick="addBlock('music')"><span class="icon" data-icon="music"></span><span data-i18n="block_music">Música</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'music')" ondragend="onPaletteDragEnd()" onclick="addBlock('music')"><span class="icon" data-icon="music"></span><span data-i18n="block_music">Música</span></button>
         </div>
         <div class="palette-group cat-advanced">
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_advanced">Avanzado</span></div>
-          <button class="palette-btn" onclick="addBlock('comment')"><span class="icon" data-icon="comment"></span><span data-i18n="block_comment">Comentario</span></button>
-          <button class="palette-btn" onclick="addBlock('custom')"><span class="icon" data-icon="custom"></span><span data-i18n="block_custom">Código libre</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'comment')" ondragend="onPaletteDragEnd()" onclick="addBlock('comment')"><span class="icon" data-icon="comment"></span><span data-i18n="block_comment">Comentario</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'custom')" ondragend="onPaletteDragEnd()" onclick="addBlock('custom')"><span class="icon" data-icon="custom"></span><span data-i18n="block_custom">Código libre</span></button>
         </div>
         <div class="palette-group cat-patch" hidden>
           <div class="palette-group-title"><span class="palette-swatch"></span><span data-i18n="block_group_patch">Parche</span></div>
-          <button class="palette-btn" onclick="addPatchBlock()"><span class="icon" data-icon="patch"></span><span data-i18n="block_patch">Contenido del parche</span></button>
+          <button class="palette-btn" draggable="true" ondragstart="onPaletteDragStart(event, 'patch')" ondragend="onPaletteDragEnd()" onclick="addPatchBlock()"><span class="icon" data-icon="patch"></span><span data-i18n="block_patch">Contenido del parche</span></button>
         </div>
       </aside>
       <div class="resize-handle col split" id="resize-palette" data-i18n-title="resize_panel"></div>
-      <div id="block-list"></div>
+      <div id="block-list" ondragover="onListDragOver(event)" ondrop="onListDrop(event)"></div>
     </div>
 
     <!-- Right Panel: Code Preview -->
@@ -426,5 +426,6 @@
   <script src="manual.js"></script>
   <script src="report.js"></script>
   <script src="sidebar.js"></script>
+  <script src="block-insert.js"></script>
 </body>
 </html>

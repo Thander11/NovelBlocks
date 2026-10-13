@@ -248,6 +248,7 @@
   "btn_duplicate_end": "复制到末尾",
   "btn_edit": "编辑",
   "btn_delete": "删除",
+  "insert_block_here": "在此处添加块",
   "palette_title": "添加区块",
   "block_group_text": "文本",
   "block_group_scene": "场景",
