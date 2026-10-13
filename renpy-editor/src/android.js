@@ -14,7 +14,8 @@ try { androidSel = { ...androidSel, ...JSON.parse(localStorage.getItem('androidS
 
 const ANDROID_STEPS = ['rapt', 'jdk', 'sdk', 'keys'];
 const androidWanted = () => androidSel.apk || androidSel.aab;
-const androidReady = () => !!androidState && ANDROID_STEPS.every(s => androidState[s]) && !!androidState.config;
+// The app's details are saved when building, so the defaults count too
+const androidReady = () => !!androidState && !!androidState.renpy && ANDROID_STEPS.every(s => androidState[s]);
 
 async function loadAndroidState() {
   androidState = await window.api.androidStatus();
