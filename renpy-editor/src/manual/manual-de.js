@@ -55,6 +55,7 @@
     <li><strong>{{tab_backgrounds}}</strong> und <strong>{{tab_scenes}}:</strong> die Hintergründe der Orte und die Illustrationen (CGs) besonderer Momente.</li>
     <li><strong>{{tab_animations}}</strong> und <strong>{{tab_positions}}:</strong> die <code>transform</code>s und Positionen, die du beim Anzeigen von Figuren nutzen kannst.</li>
   </ul>
+  <p>In <code>characters.rpy</code> hat jede Figur ihren eigenen Block: <code># Name</code>, ihr <code>define</code> und darunter ihre Sprites, nach Typ gruppiert mit <code>## Name Typ</code>. Neue Figuren werden alphabetisch hinter den vorhandenen eingeordnet (wenn du die Hauptfiguren an den Anfang gestellt hast, bleiben sie dort), und als <em>unbekannt</em> markierte kommen in den Abschnitt <code># Unknown</code> am Anfang.</p>
   <p>Beim Löschen fragt der Editor, ob auch die Bilddatei gelöscht oder behalten werden soll.</p>
 </section>
 

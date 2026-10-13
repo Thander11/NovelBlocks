@@ -185,37 +185,20 @@ async function saveCharacter() {
   const imageAttr = document.getElementById('nc-image').value.trim().replace(/[^A-Za-z0-9_]/g, '');
   if (!id || !name) { notify(t('fill_all_fields'), 'err'); return; }
 
+  const imgPart = imageAttr ? `, image = "${imageAttr}"` : '';
+  const defineLine = `define ${id} = Character("${name}"${imgPart})`;
+
   if (editingCharIdx >= 0) {
-    // ── EDIT existing character ──
+    // ── EDIT existing character: its define, and with a new id its headers and sprites ──
     const oldChar = characters[editingCharIdx];
+    if (oldChar.id !== id && characters.some(c => c.id === id)) { notify(t('char_exists', id), 'err'); return; }
     const ptxt = await window.declApi.readFile('characters.rpy') || '';
-    const lines = ptxt.split('\n');
-
-    // Update define line
-    const defineRe = new RegExp(`^define\\s+${oldChar.id}\\s*=\\s*Character\\s*\\(`);
-    for (let i = 0; i < lines.length; i++) {
-      if (defineRe.test(lines[i])) {
-        const imgPart = imageAttr ? `, image = "${imageAttr}"` : '';
-        lines[i] = `define ${id} = Character("${name}"${imgPart})`;
-        break;
-      }
-    }
-
-    // If id changed, update image lines too
+    await window.declApi.writeFile('characters.rpy', CharactersFile.renameCharacter(ptxt, oldChar.id, id, defineLine));
     if (oldChar.id !== id) {
-      const imgRe = new RegExp(`^image\\s+${oldChar.id}_`);
-      for (let i = 0; i < lines.length; i++) {
-        if (imgRe.test(lines[i])) {
-          lines[i] = lines[i].replace(new RegExp(`^image\\s+${oldChar.id}_`), `image ${id}_`);
-        }
-      }
-      // Update images in memory
       oldChar.images.forEach(img => {
         img.key = img.key.replace(new RegExp(`^${oldChar.id}_`), `${id}_`);
       });
     }
-
-    await window.declApi.writeFile('characters.rpy', lines.join('\n'));
     oldChar.id = id;
     oldChar.displayName = name;
     oldChar.imageAttr = imageAttr;
@@ -224,35 +207,14 @@ async function saveCharacter() {
     notifyMainReload();
     notify(t('char_edited', id), 'ok');
   } else {
-    // ── ADD new character ──
+    // ── ADD new character, where the file's order puts it ──
     if (characters.find(c => c.id === id)) { notify(t('char_exists', id), 'err'); return; }
     const isUnknown = document.getElementById('nc-unknown') && document.getElementById('nc-unknown').checked;
     const ptxt = await window.declApi.readFile('characters.rpy') || '';
-    const imgPart = imageAttr ? `, image = "${imageAttr}"` : '';
-    const defineLine = `define ${id} = Character("${name}"${imgPart})`;
-    
-    let newText = '';
-    if (isUnknown) {
-      const lines = ptxt.split('\n');
-      const headerIdx = lines.findIndex(l => l.trim().toLowerCase() === '# unknown');
-      if (headerIdx !== -1) {
-        lines.splice(headerIdx + 1, 0, defineLine);
-        newText = lines.join('\n');
-      } else {
-        newText = '# Unknown\n' + defineLine + '\n\n' + ptxt.trimStart() + '\n';
-      }
-    } else {
-      newText = ptxt.trimEnd() + '\n\n' + defineLine + '\n';
-    }
-    
+    const newText = CharactersFile.insertCharacter(ptxt, id, defineLine, isUnknown);
     await window.declApi.writeFile('characters.rpy', newText);
-    
-    if (isUnknown) {
-      characters.unshift({ id, displayName: name, imageAttr, images: [] });
-    } else {
-      characters.push({ id, displayName: name, imageAttr, images: [] });
-    }
-    
+    // The list follows the file
+    parsePersonajes(newText);
     renderCharList();
     hideAddCharForm();
     notifyMainReload();
@@ -265,13 +227,7 @@ async function deleteCharacter(idx) {
   if (!await showConfirm(t('confirm_delete_char', c.displayName), { danger: true })) return;
 
   const ptxt = await window.declApi.readFile('characters.rpy') || '';
-  const lines = ptxt.split('\n');
-  const filtered = lines.filter(line => {
-    if (new RegExp(`^define\\s+${c.id}\\s*=`).test(line)) return false;
-    if (new RegExp(`^image\\s+${c.id}_`).test(line)) return false;
-    return true;
-  });
-  await window.declApi.writeFile('characters.rpy', filtered.join('\n'));
+  await window.declApi.writeFile('characters.rpy', CharactersFile.removeCharacter(ptxt, c.id));
 
   // Offer to delete image files
   if (c.images.length > 0) {
@@ -432,18 +388,21 @@ async function saveSpriteEdit() {
     await window.declApi.copyImageToProject(newSpriteImagePath, `images/${newPath}`);
   }
 
-  // Remove the old line and insert the new one inside its character/type group
+  // Same type: the line changes where it is. New type: it moves to that type's group
   const ptxt = await window.declApi.readFile('characters.rpy') || '';
-  const lines = ptxt.split('\n').filter(line => {
-    const m = line.match(/^image\s+(\S+)\s*=/);
-    return !(m && m[1] === img.key);
-  });
-  insertSpriteLines(lines, chr.id, newType, [`image ${newKey} = "${newPath}"`]);
-  await window.declApi.writeFile('characters.rpy', lines.join('\n'));
+  const newLine = `image ${newKey} = "${newPath}"`;
+  const oldType = parseSpriteKey(chr.id, img.key).type;
+  const newText = newType === oldType
+    ? ptxt.split(/(\r?\n)/).map(l => (l.match(/^image\s+(\w+)\s*=/) || [])[1] === img.key ? newLine : l).join('')
+    : CharactersFile.insertSprites(CharactersFile.removeSprites(ptxt, [img.key]), chr.id, newType, [newLine]);
+  await window.declApi.writeFile('characters.rpy', newText);
 
   // Keep the in-memory list ordered like the file
-  chr.images.splice(editingSpriteIdx, 1);
-  insertSpriteInMemory(chr, newType, { key: newKey, path: newPath });
+  if (newType === oldType) chr.images[editingSpriteIdx] = { key: newKey, path: newPath };
+  else {
+    chr.images.splice(editingSpriteIdx, 1);
+    insertSpriteInMemory(chr, newType, { key: newKey, path: newPath });
+  }
   loadCharSprites();
   hideSpriteEditForm();
   notifyMainReload();
@@ -457,12 +416,7 @@ async function deleteSprite(charId, imgIdx) {
   if (!img || !await showConfirm(t('confirm_delete_sprite', img.key), { danger: true })) return;
 
   const ptxt = await window.declApi.readFile('characters.rpy') || '';
-  const lines = ptxt.split('\n');
-  const filtered = lines.filter(line => {
-    const m = line.match(/^image\s+(\S+)\s*=/);
-    return !(m && m[1] === img.key);
-  });
-  await window.declApi.writeFile('characters.rpy', filtered.join('\n'));
+  await window.declApi.writeFile('characters.rpy', CharactersFile.removeSprites(ptxt, [img.key]));
 
   // Delete image file
   if (img.path) {
@@ -518,40 +472,15 @@ async function importSprites(chr, type, files) {
     counter++;
   }
 
+  // In their character's block, under their type (a new type gets its "## <id> <type>" header)
   const ptxt = await window.declApi.readFile('characters.rpy') || '';
-  const lines = ptxt.split('\n');
-  insertSpriteLines(lines, chr.id, type, newImages.map(img => `image ${img.key} = "${img.path}"`));
-  await window.declApi.writeFile('characters.rpy', lines.join('\n'));
+  await window.declApi.writeFile('characters.rpy',
+    CharactersFile.insertSprites(ptxt, chr.id, type, newImages.map(img => `image ${img.key} = "${img.path}"`)));
 
   newImages.forEach(img => insertSpriteInMemory(chr, type, img));
   loadCharSprites();
   notifyMainReload();
   notify(t('sprites_added', newImages.length), 'ok');
-}
-
-// Insert image lines (in place) so the file stays grouped by character and type:
-// after the last sprite of the same type, else after the character's last sprite,
-// else after its define line, else at the end of the file.
-function insertSpriteLines(lines, charId, type, newLines) {
-  const imgRe = /^image\s+(\w+)\s*=/;
-  const chr = characters.find(c => c.id === charId);
-  let lastSameType = -1, lastOfChar = -1, defineIdx = -1;
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(imgRe);
-    if (m && findCharForSpriteKey(characters, m[1]) === chr) {
-      lastOfChar = i;
-      if (parseSpriteKey(charId, m[1]).type === type) lastSameType = i;
-    } else if (new RegExp(`^define\\s+${charId}\\s*=`).test(lines[i])) {
-      defineIdx = i;
-    }
-  }
-  let at = lastSameType >= 0 ? lastSameType : lastOfChar >= 0 ? lastOfChar : defineIdx;
-  if (at >= 0) {
-    lines.splice(at + 1, 0, ...newLines);
-  } else {
-    while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
-    lines.push('', ...newLines, '');
-  }
 }
 
 function insertSpriteInMemory(chr, type, img) {

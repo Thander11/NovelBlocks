@@ -55,6 +55,7 @@
     <li><strong>Fondos</strong> y <strong>Escenas:</strong> los fondos de cada lugar y las ilustraciones (CG) de momentos concretos.</li>
     <li><strong>Animaciones</strong> y <strong>Posiciones:</strong> los <code>transform</code> y las posiciones que puedes usar al mostrar personajes.</li>
   </ul>
+  <p>En <code>characters.rpy</code> cada personaje tiene su bloque: <code># Nombre</code>, su <code>define</code> y debajo sus sprites, agrupados por tipo con <code>## Nombre tipo</code>. Los personajes nuevos se colocan por orden alfabético detrás de los que ya tienes (si pusiste a los protagonistas primero, siguen primero), y los que marcas como <em>desconocidos</em> van a la sección <code># Unknown</code> del principio.</p>
   <p>Al eliminar algo, el editor te pregunta si quieres borrar también el archivo de imagen o conservarlo.</p>
 </section>
 

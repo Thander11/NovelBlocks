@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
+const CharactersFile = require('./src/characters-file');
 
 const INSTRUCTIONS = `This server is Ren'Py EDITOR, a visual editor for Ren'Py visual novels that the user has open on their computer.
 Use these tools to understand the user's novel: its scenes (Ren'Py labels), the jumps, calls and decisions between them, characters, images, audio, story variables and GUI settings.
@@ -405,7 +406,8 @@ function buildWriteTools({ gamePathOrThrow, rpyFiles, resolveRpy, findLabel, cha
         const fp = path.join(gp, 'characters.rpy');
         const raw = readText(fp);
         const entry = await changes.record({ tool: 'add_character', target: name }, ['characters.rpy'], () => {
-          fs.writeFileSync(fp, appendBlock(raw || '# Characters', `define ${variable} = Character(${args})`, raw ? eolOf(raw) : os.EOL), 'utf-8');
+          // In its place in the file's order, like the declarations window does
+          fs.writeFileSync(fp, CharactersFile.insertCharacter(raw || '# Characters' + os.EOL, variable, `define ${variable} = Character(${args})`, false), 'utf-8');
         });
         return done(entry, `Character "${name}" added to characters.rpy as ${variable}.`);
       })

@@ -55,6 +55,7 @@
     <li><strong>{{tab_backgrounds}}</strong>と<strong>{{tab_scenes}}：</strong>各場所の背景と、特定の場面のイラスト（CG）。</li>
     <li><strong>{{tab_animations}}</strong>と<strong>{{tab_positions}}：</strong>キャラクターを表示するときに使える <code>transform</code> と位置。</li>
   </ul>
+  <p><code>characters.rpy</code> では、キャラクターごとにブロックがあります：<code># 名前</code>、その <code>define</code>、その下に種類ごとにまとめたスプライト（見出しは <code>## 名前 種類</code>）。新しいキャラクターは既存のキャラクターの後ろにアルファベット順で追加されます（主人公を先頭に置いていれば先頭のまま）。<em>不明</em>にしたキャラクターは先頭の <code># Unknown</code> セクションに入ります。</p>
   <p>削除するときは、画像ファイルも削除するか残すかを確認されます。</p>
 </section>
 

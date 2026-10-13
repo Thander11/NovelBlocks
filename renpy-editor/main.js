@@ -9,6 +9,7 @@ const { buildMcpTools, INSTRUCTIONS: MCP_INSTRUCTIONS } = require('./mcp-tools')
 const { createChangeLog } = require('./mcp-changes');
 const { setupUpdates } = require('./updater');
 const { setupAndroid } = require('./android');
+const CharactersFile = require('./src/characters-file');
 
 let mainWindow = null;
 let declWindow = null;
@@ -1536,8 +1537,13 @@ ipcMain.handle('patch-move-image', (_, name, toPatch) => {
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.renameSync(src, dest);
       }
-      removeLine(from, decl.line);
-      appendLine(to, `image ${name} = "${newRel}"`, toPatch ? '# Patch: images that only the patch has' : `# ${f}`);
+      // characters.rpy keeps its blocks: a sprite goes back under its character and type
+      if (f === 'characters.rpy' && toPatch) {
+        fs.writeFileSync(from, CharactersFile.removeSprites(fs.readFileSync(from, 'utf-8'), [name]), 'utf-8');
+      } else removeLine(from, decl.line);
+      if (f === 'characters.rpy' && !toPatch && fs.existsSync(to)) {
+        fs.writeFileSync(to, CharactersFile.insertSpriteLine(fs.readFileSync(to, 'utf-8'), name, `image ${name} = "${newRel}"`), 'utf-8');
+      } else appendLine(to, `image ${name} = "${newRel}"`, toPatch ? '# Patch: images that only the patch has' : `# ${f}`);
       return { ok: true, path: newRel };
     } catch (e) {
       return { ok: false, error: e.message };

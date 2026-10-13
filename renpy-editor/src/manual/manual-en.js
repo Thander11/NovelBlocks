@@ -55,6 +55,7 @@
     <li><strong>Backgrounds</strong> and <strong>Scenes:</strong> the backgrounds of each place and the illustrations (CGs) of specific moments.</li>
     <li><strong>Animations</strong> and <strong>Positions:</strong> the <code>transform</code>s and positions you can use when showing characters.</li>
   </ul>
+  <p>In <code>characters.rpy</code> every character has its own block: <code># Name</code>, its <code>define</code> and then its sprites, grouped by type with <code>## Name type</code>. New characters go in alphabetical order after the ones you already have (if you put the main characters first, they stay first), and the ones you mark as <em>unknown</em> go to the <code># Unknown</code> section at the top.</p>
   <p>When you delete something, the editor asks whether to delete the image file too or keep it.</p>
 </section>
 

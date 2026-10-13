@@ -55,6 +55,7 @@
     <li><strong>{{tab_backgrounds}}</strong> e <strong>{{tab_scenes}}:</strong> os fundos de cada lugar e as ilustrações (CG) de momentos específicos.</li>
     <li><strong>{{tab_animations}}</strong> e <strong>{{tab_positions}}:</strong> os <code>transform</code> e as posições que podem ser usados ao mostrar personagens.</li>
   </ul>
+  <p>No <code>characters.rpy</code> cada personagem tem seu bloco: <code># Nome</code>, seu <code>define</code> e embaixo seus sprites, agrupados por tipo com <code>## Nome tipo</code>. Os personagens novos entram em ordem alfabética depois dos que você já tem (se colocou os protagonistas primeiro, eles continuam primeiro), e os que você marca como <em>desconhecidos</em> vão para a seção <code># Unknown</code> do início.</p>
   <p>Ao excluir algo, o editor pergunta se deve apagar também o arquivo de imagem ou mantê-lo.</p>
 </section>
 

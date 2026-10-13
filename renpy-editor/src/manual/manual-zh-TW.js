@@ -55,6 +55,7 @@
     <li><strong>{{tab_backgrounds}}</strong>和<strong>{{tab_scenes}}：</strong>各個地點的背景，以及特定時刻的插圖（CG）。</li>
     <li><strong>{{tab_animations}}</strong>和<strong>{{tab_positions}}：</strong>顯示角色時可以使用的 <code>transform</code> 和位置。</li>
   </ul>
+  <p>在 <code>characters.rpy</code> 中，每個角色都有自己的區塊：<code># 名稱</code>、它的 <code>define</code>，下面是依類型分組的立繪，類型標題為 <code>## 名稱 類型</code>。新角色會依字母順序排在現有角色之後（如果你把主角放在最前面，他們仍然在最前面），標記為<em>未知</em>的角色則放在開頭的 <code># Unknown</code> 部分。</p>
   <p>刪除某項時，編輯器會詢問是否一併刪除圖片檔案，還是保留它。</p>
 </section>
 
