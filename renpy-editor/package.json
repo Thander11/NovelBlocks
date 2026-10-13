@@ -5,13 +5,75 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron . --dev"
+    "dev": "electron . --dev",
+    "dist": "electron-builder --win --publish never",
+    "release": "electron-builder --win --publish always"
   },
   "devDependencies": {
-    "electron": "^28.0.0"
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
-    "@fontsource/dm-mono": "^5.3.0"
+    "@fontsource/dm-mono": "^5.3.0",
+    "electron-updater": "^6.1.8"
+  },
+  "productName": "Ren'Py EDITOR",
+  "author": "Thander",
+  "build": {
+    "appId": "com.thander.renpyeditor",
+    "productName": "Ren'Py EDITOR",
+    "artifactName": "RenPy-EDITOR-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "main-menu-preload.js",
+      "gui-editor-preload.js",
+      "declaration-preload.js",
+      "mcp-server.js",
+      "mcp-tools.js",
+      "mcp-changes.js",
+      "mcp-bridge.js",
+      "updater.js",
+      "report.config.json",
+      "src/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "mcp-bridge.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Ren'Py EDITOR"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png",
+      "category": "Development",
+      "artifactName": "RenPy-EDITOR-${version}.${ext}"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.png",
+      "category": "public.app-category.developer-tools",
+      "artifactName": "RenPy-EDITOR-${version}.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Thander11",
+        "repo": "Ren-Py-EDITOR"
+      }
+    ]
   }
 }

@@ -7,6 +7,7 @@ const { spawn } = require('child_process');
 const { createMcpServer } = require('./mcp-server');
 const { buildMcpTools, INSTRUCTIONS: MCP_INSTRUCTIONS } = require('./mcp-tools');
 const { createChangeLog } = require('./mcp-changes');
+const { setupUpdates } = require('./updater');
 
 let mainWindow = null;
 let declWindow = null;
@@ -32,7 +33,11 @@ let settings = {
 let fsWatcher = null;
 let watchDebounce = null;
 
-const settingsPath = path.join(__dirname, 'settings.json');
+// Settings live in the user's data folder, the same for the installed editor and a
+// development copy (the editor's own folder is read-only once installed)
+app.setPath('userData', path.join(app.getPath('appData'), 'RenPy-EDITOR'));
+const settingsPath = path.join(app.getPath('userData'), 'settings.json');
+const oldSettingsPath = path.join(__dirname, 'settings.json');
 
 // ── Helper: Deep merge objects ──
 function deepMerge(target, source) {
@@ -52,6 +57,11 @@ function deepMerge(target, source) {
 // ── Load / Save Settings ──
 function loadSettings() {
   try {
+    // Settings of versions that kept them next to the editor move to the new place
+    if (!fs.existsSync(settingsPath) && fs.existsSync(oldSettingsPath)) {
+      fs.mkdirSync(path.dirname(settingsPath), { recursive: true });
+      fs.copyFileSync(oldSettingsPath, settingsPath);
+    }
     if (fs.existsSync(settingsPath)) {
       const saved = JSON.parse(fs.readFileSync(settingsPath, 'utf-8'));
       settings = deepMerge(settings, saved);
@@ -60,6 +70,7 @@ function loadSettings() {
 }
 
 function saveSettings() {
+  fs.mkdirSync(path.dirname(settingsPath), { recursive: true });
   fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2), 'utf-8');
 }
 
@@ -95,6 +106,7 @@ app.whenReady().then(() => {
 
   createMainWindow();
   if (settings.claude.enabled) startClaudeServer();
+  setupUpdates({ getWindow: () => mainWindow });
 });
 
 app.on('window-all-closed', () => {
@@ -2311,7 +2323,7 @@ function claudeDesktopConfigPath() {
 function claudeDesktopEntry() {
   return {
     command: process.execPath,
-    args: [path.join(__dirname, 'mcp-bridge.js'), settingsPath],
+    args: [path.join(__dirname.replace(/app\.asar$/, 'app.asar.unpacked'), 'mcp-bridge.js'), settingsPath],
     env: { ELECTRON_RUN_AS_NODE: '1' }
   };
 }

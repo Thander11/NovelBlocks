@@ -42,6 +42,12 @@
   <!-- Folded sidebar: the left edge of the window brings it out -->
   <button id="sb-edge" onclick="toggleSidebar(false)" data-i18n-title="sidebar_show" aria-label="Mostrar barra lateral" aria-controls="sidebar"></button>
   <div id="workspace">
+    <div id="update-banner" role="status" hidden>
+      <span class="icon" data-icon="package" data-icon-size="16"></span>
+      <span id="update-banner-text"></span>
+      <button class="btn btn-primary btn-sm" onclick="installUpdate()" data-i18n="update_restart">Reiniciar y actualizar</button>
+      <button class="btn btn-secondary btn-sm" onclick="dismissUpdateBanner()" data-i18n="update_later">Más tarde</button>
+    </div>
   <!-- Header of the scene editor -->
   <header id="header">
     <div class="hdr-title">
@@ -111,6 +117,12 @@
       <label class="form-label" data-i18n="projects_dir">Carpeta de proyectos</label>
       <div class="settings-path" id="setting-projects-dir"></div>
       <button class="btn btn-secondary btn-sm" onclick="changeProjectsDirectory()" data-i18n="change_folder">Cambiar carpeta</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label" data-i18n="update_title">Versión y actualizaciones</label>
+      <div class="update-row"><span id="update-version"></span><button class="btn btn-secondary btn-sm" id="update-check-btn" onclick="checkForUpdates()" data-i18n="update_check">Buscar actualizaciones</button></div>
+      <div class="settings-hint" id="update-status" role="status" aria-live="polite"></div>
+      <button class="btn btn-primary btn-sm" id="update-install-btn" onclick="installUpdate()" data-i18n="update_restart" hidden>Reiniciar y actualizar</button>
     </div>
     <div class="form-group">
       <label class="form-label" data-i18n="claude_connection">Conexión con Claude</label>
@@ -427,5 +439,6 @@
   <script src="report.js"></script>
   <script src="sidebar.js"></script>
   <script src="block-insert.js"></script>
+  <script src="updates.js"></script>
 </body>
 </html>

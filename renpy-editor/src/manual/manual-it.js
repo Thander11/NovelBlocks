@@ -243,6 +243,7 @@
     <li><strong>Ren'Py:</strong> quale installazione si usa, e il pulsante per cambiarla o installarne un'altra.</li>
     <li><strong>{{projects_dir}}:</strong> dove si creano i nuovi progetti.</li>
     <li><strong>{{claude_connection}}:</strong> vedi la sezione seguente.</li>
+    <li><strong>{{update_title}}:</strong> la versione dell'editor e il pulsante <em>{{update_check}}</em>. L'editor installato li cerca da solo, li scarica in background e ti avvisa quando uno è pronto: si installa con <em>{{update_restart}}</em> o alla prossima chiusura dell'editor.</li>
   </ul>
 </section>
 

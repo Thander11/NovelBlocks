@@ -243,6 +243,7 @@
     <li><strong>Ren'Py：</strong>当前使用的安装，以及更换或另装一个的按钮。</li>
     <li><strong>{{projects_dir}}：</strong>新项目的创建位置。</li>
     <li><strong>{{claude_connection}}：</strong>参见下一节。</li>
+    <li><strong>{{update_title}}：</strong>编辑器的版本和“{{update_check}}”按钮。已安装的编辑器会自动查找更新、在后台下载，并在就绪时提醒你：点击“{{update_restart}}”或下次关闭编辑器时即会安装。</li>
   </ul>
 </section>
 

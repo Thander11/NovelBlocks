@@ -1536,3 +1536,16 @@ button:disabled, input:disabled, select:disabled { opacity: 0.55; cursor: not-al
 .insert-group-title { display: flex; align-items: center; gap: 6px; padding: 4px 8px; font-size: 10.5px; font-weight: 700; color: var(--text3); }
 #insert-menu .palette-btn { width: 100%; }
 #insert-menu .palette-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* ── Updates of the editor ── */
+.update-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; font-size: 12.5px; }
+#update-status:empty { display: none; }
+#update-status.error { color: var(--red); }
+#update-banner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 16px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface)); border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  font-size: 13px;
+}
+#update-banner[hidden] { display: none; }
+#update-banner > .icon { color: var(--accent); }
+#update-banner #update-banner-text { flex: 1; min-width: 200px; }

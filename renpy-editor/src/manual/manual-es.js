@@ -243,6 +243,7 @@
     <li><strong>Ren'Py:</strong> qué instalación se usa, y el botón para cambiarla o instalar otra.</li>
     <li><strong>Carpeta de proyectos:</strong> dónde se crean los proyectos nuevos.</li>
     <li><strong>Conexión con Claude:</strong> ver la sección siguiente.</li>
+    <li><strong>Versión y actualizaciones:</strong> la versión del editor y el botón para buscar actualizaciones. El editor instalado las busca solo, las descarga en segundo plano y te avisa cuando hay una lista: se instala al pulsar <em>Reiniciar y actualizar</em> o la próxima vez que cierres el editor.</li>
   </ul>
 </section>
 

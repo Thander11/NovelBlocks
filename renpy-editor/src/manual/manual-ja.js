@@ -243,6 +243,7 @@
     <li><strong>Ren'Py：</strong>使用中のインストールと、変更や別のインストールのためのボタン。</li>
     <li><strong>{{projects_dir}}：</strong>新しいプロジェクトの作成先。</li>
     <li><strong>{{claude_connection}}：</strong>次のセクションを参照。</li>
+    <li><strong>{{update_title}}：</strong>エディターのバージョンと「{{update_check}}」ボタン。インストールしたエディターは自動でアップデートを探してバックグラウンドでダウンロードし、準備ができると知らせます。「{{update_restart}}」を押すか、次にエディターを閉じたときにインストールされます。</li>
   </ul>
 </section>
 

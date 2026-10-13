@@ -243,6 +243,7 @@
     <li><strong>Ren'Py:</strong> which installation is used, and the button to change it or install another one.</li>
     <li><strong>Projects folder:</strong> where new projects are created.</li>
     <li><strong>Connection with Claude:</strong> see the next section.</li>
+    <li><strong>Version and updates:</strong> the editor's version and the button to check for updates. The installed editor looks for them by itself, downloads them in the background and tells you when one is ready: it installs when you click <em>Restart and update</em> or the next time you close the editor.</li>
   </ul>
 </section>
 

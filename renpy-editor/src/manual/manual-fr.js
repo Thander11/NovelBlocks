@@ -243,6 +243,7 @@
     <li><strong>Ren'Py :</strong> l'installation utilisée, et le bouton pour la changer ou en installer une autre.</li>
     <li><strong>{{projects_dir}} :</strong> où sont créés les nouveaux projets.</li>
     <li><strong>{{claude_connection}} :</strong> voir la section suivante.</li>
+    <li><strong>{{update_title}} :</strong> la version de l'éditeur et le bouton <em>{{update_check}}</em>. L'éditeur installé les cherche tout seul, les télécharge en arrière-plan et te prévient quand une est prête : elle s'installe avec <em>{{update_restart}}</em> ou à la prochaine fermeture de l'éditeur.</li>
   </ul>
 </section>
 

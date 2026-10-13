@@ -36,6 +36,12 @@ contextBridge.exposeInMainWorld('api', {
   patchMoveImage: (name, toPatch) => ipcRenderer.invoke('patch-move-image', name, toPatch),
   patchWriteOwner: (owner, code) => ipcRenderer.invoke('patch-write-owner', owner, code),
 
+  // Updates of the editor itself
+  updateStatus: () => ipcRenderer.invoke('update-status'),
+  updateCheck: () => ipcRenderer.invoke('update-check'),
+  updateInstall: () => ipcRenderer.invoke('update-install'),
+  onUpdateStatus: (cb) => ipcRenderer.on('update-status', (_, s) => cb(s)),
+
   // Problems and suggestions sent to the author
   reportInfo: () => ipcRenderer.invoke('report-info'),
   reportSend: (report) => ipcRenderer.invoke('report-send', report),
