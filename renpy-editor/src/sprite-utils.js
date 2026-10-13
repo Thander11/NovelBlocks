@@ -50,11 +50,6 @@ function groupSpritesByType(chr) {
   return groups;
 }
 
-function getSpritesOfType(chr, type) {
-  if (!chr) return [];
-  return (chr.images || []).filter(img => parseSpriteKey(chr.id, img.key).type === type);
-}
-
 function getSpriteType(chr, key) {
   return chr ? parseSpriteKey(chr.id, key).type : '';
 }

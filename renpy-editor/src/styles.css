@@ -643,7 +643,6 @@ body {
 .hl-string { color: var(--code-string); }
 .hl-comment { color: var(--code-comment); font-style: italic; }
 .hl-number { color: var(--code-number); }
-.hl-operator { color: var(--text2); }
 .hl-python { color: var(--code-text); }
 .hl-function { color: var(--code-number); font-weight: bold; }
 

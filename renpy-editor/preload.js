@@ -5,7 +5,6 @@ contextBridge.exposeInMainWorld('api', {
   selectProjectFolder: () => ipcRenderer.invoke('select-project-folder'),
   reselectProjectFolder: () => ipcRenderer.invoke('reselect-project-folder'),
   loadLastProject: () => ipcRenderer.invoke('load-last-project'),
-  reloadCurrentProject: () => ipcRenderer.invoke('reload-current-project'),
   launchRenpyProject: () => ipcRenderer.invoke('launch-renpy-project'),
   checkRenpy: () => ipcRenderer.invoke('check-renpy'),
   openRenpyWebsite: () => ipcRenderer.invoke('open-renpy-website'),

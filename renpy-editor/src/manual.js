@@ -1,6 +1,7 @@
 // ═══════════════════════════════════════════════════════════
 // Ren'Py EDITOR — User manual screen. Every language has its own
-// manual (src/manual/manual-<lang>.js); English when one is missing.
+// manual (src/manual/manual-<lang>.js), loaded the first time it's
+// shown; English when one is missing.
 // {{key}} in a manual is the editor's own text for that i18n key, so
 // the manual names buttons exactly as the interface does.
 // ═══════════════════════════════════════════════════════════
@@ -9,17 +10,36 @@ let manualShownLang = '';
 let manualPrevNav = 'nav-scenes';
 let manualObserver = null;
 
-const manualLang = () => MANUALS[currentLang] ? currentLang : 'en';
+window.MANUALS = window.MANUALS || {};
+const manualLoads = {};
+
+// Only the manual in use is loaded, not all ten
+function loadManualScript(lang) {
+  if (MANUALS[lang]) return Promise.resolve(true);
+  return manualLoads[lang] || (manualLoads[lang] = new Promise(resolve => {
+    const script = document.createElement('script');
+    script.src = `manual/manual-${lang}.js`;
+    script.onload = () => resolve(!!MANUALS[lang]);
+    script.onerror = () => { delete manualLoads[lang]; script.remove(); resolve(false); };
+    document.head.appendChild(script);
+  }));
+}
+
+async function manualLang() {
+  if (await loadManualScript(currentLang)) return currentLang;
+  await loadManualScript('en');
+  return 'en';
+}
 
 // Interface texts inside the manual, without trailing colons
 const manualUiText = (html) => html.replace(/\{\{(\w+)\}\}/g, (_, key) => escHtml(t(key).replace(/[:：]\s*$/, '')));
 
-function openManual(sectionId) {
+async function openManual(sectionId) {
   const screen = document.getElementById('manual-screen');
   if (!screen.classList.contains('open')) {
     manualPrevNav = document.querySelector('#sidebar .sb-item.active')?.id || 'nav-scenes';
   }
-  renderManual();
+  await renderManual();
   hideEmbeddedEditors();
   screen.classList.add('open');
   setActiveNav('nav-manual');
@@ -35,8 +55,8 @@ function closeManual() {
   else setActiveNav(manualPrevNav);
 }
 
-function renderManual() {
-  const lang = manualLang();
+async function renderManual() {
+  const lang = await manualLang();
   if (manualShownLang === lang) return;
   manualShownLang = lang;
   const m = MANUALS[lang];

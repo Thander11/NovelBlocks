@@ -37,13 +37,13 @@ let transformsPos = '';  // raw text of positions.rpy
 async function loadI18n(lang) {
   try {
     const raw = await window.declApi.readI18n(lang);
-    translations = JSON.parse(raw);
+    translations = parseTranslations(raw);
     currentLang = lang;
     document.documentElement.lang = lang;
   } catch (e) { translations = {}; }
 }
 function t(key, ...args) {
-  let str = stripLeadingEmoji(translations[key] || key);
+  let str = translations[key] || key;
   args.forEach((a, i) => { str = str.replace(`{${i}}`, a); });
   return str;
 }

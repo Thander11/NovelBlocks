@@ -1295,24 +1295,6 @@ ipcMain.handle('load-last-project', async () => {
   return currentGamePath;
 });
 
-// ── Reload current project (same flow as opening a project, without dialog) ──
-ipcMain.handle('reload-current-project', () => {
-  const basePath = currentGamePath || settings.lastGamePath;
-  if (!basePath) return null;
-  if (!fs.existsSync(basePath)) return null;
-
-  currentGamePath = basePath;
-  settings.lastProjectPath = path.dirname(basePath);
-  settings.lastGamePath = basePath;
-  saveSettings();
-
-  ensureProjectStructure(currentGamePath);
-  startFileWatcher(currentGamePath);
-  if (mainWindow) mainWindow.focus();
-
-  return currentGamePath;
-});
-
 // ── Notify main window to reload project data ──
 ipcMain.handle('reload-project-data', () => {
   if (mainWindow) mainWindow.webContents.send('reload-data');
@@ -1813,22 +1795,6 @@ ipcMain.handle('delete-image', (_, relativePath) => {
 ipcMain.handle('read-i18n', (_, lang) => {
   const fp = path.join(__dirname, 'src', 'i18n', lang + '.json');
   try { return fs.readFileSync(fp, 'utf-8'); } catch (e) { return '{}'; }
-});
-
-// ── List subdirectories in images/characters/ ──
-ipcMain.handle('list-character-dirs', () => {
-  if (!currentGamePath) return [];
-  const baseDir = path.join(currentGamePath, 'images', 'characters');
-  try {
-    return fs.readdirSync(baseDir, { withFileTypes: true })
-      .filter(d => d.isDirectory())
-      .map(d => {
-        const subDirs = fs.readdirSync(path.join(baseDir, d.name), { withFileTypes: true })
-          .filter(sd => sd.isDirectory())
-          .map(sd => sd.name);
-        return { name: d.name, subDirs };
-      });
-  } catch (e) { return []; }
 });
 
 // ═════════════════════════════════════════════════════════════════════

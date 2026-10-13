@@ -1,73 +1,32 @@
-# Dependencias de npm
+# Dependencias de npm (package-lock.json sí se sube: fija las versiones)
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-# Compilación y distribución
+# Compilación y distribución (electron-builder)
 dist/
 build/
-out/
-release/
-*.app
-*.exe
-*.dmg
-*.zip
-*.tar.gz
 
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # IDEs y editores
 .vscode/
 .idea/
 *.swp
-*.swo
-*.sublime-workspace
-*.sublime-project
-.eslintcache
 
 # Variables de entorno
 .env
-.env.local
-.env.*.local
+.env.*
 
 # Ajustes locales del editor (se generan automáticamente en cada PC)
 settings.json
 
 # Archivos temporales
 tmp/
-temp/
 *.tmp
 *.bak
-~*
-
-# Archivos del sistema operativo
-.Thumbs.db
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-
-# Otros
-.cache
-.parcel-cache
-.next
-.nuxt
-dist
-.cache/
-.vuepress/dist
-.serverless/
-.fusebox/
-.dynamodb/
-.tern-port
 
 # Dirección privada del envío de reportes (no se sube a GitHub)
 report.config.json

@@ -12,7 +12,6 @@ contextBridge.exposeInMainWorld('declApi', {
   selectImageFiles: () => ipcRenderer.invoke('select-image-files'),
   selectImageFolder: () => ipcRenderer.invoke('select-image-folder'),
   copyImageToProject: (src, dest) => ipcRenderer.invoke('copy-image-to-project', src, dest),
-  listCharacterDirs: () => ipcRenderer.invoke('list-character-dirs'),
   listImagesInDir: (relDir) => ipcRenderer.invoke('list-images-in-dir', relDir),
   deleteImage: (relativePath) => ipcRenderer.invoke('delete-image', relativePath),
   onSettingsChanged: (cb) => ipcRenderer.on('settings-changed', (_, s) => cb(s)),

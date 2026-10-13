@@ -22,6 +22,13 @@ function stripLeadingEmoji(s) {
   return String(s).replace(/^(?:[\p{Extended_Pictographic}\p{Regional_Indicator}][️‍\p{Extended_Pictographic}\p{Regional_Indicator}]*\s*)+/u, '');
 }
 
+// A language's texts without their emoji: worked out once, not on every t()
+function parseTranslations(raw) {
+  const dict = JSON.parse(raw);
+  for (const key in dict) dict[key] = stripLeadingEmoji(dict[key]);
+  return dict;
+}
+
 // CSS variable for each code color
 const CODE_THEME_VARS = {
   codeBg: 'code-editor-bg', codeText: 'code-text', codeKeyword: 'code-keyword', codeString: 'code-string',

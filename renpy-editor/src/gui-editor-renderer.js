@@ -51,12 +51,12 @@ const project = { width: 1920, height: 1080 };
 
 async function loadI18n(lang) {
   try {
-    translations = JSON.parse(await window.guiApi.readI18n(lang));
+    translations = parseTranslations(await window.guiApi.readI18n(lang));
     document.documentElement.lang = lang;
   } catch (e) { translations = {}; }
 }
 function t(key, ...args) {
-  let str = stripLeadingEmoji(translations[key] || key);
+  let str = translations[key] || key;
   args.forEach((a, i) => { str = str.replace(`{${i}}`, a); });
   return str;
 }

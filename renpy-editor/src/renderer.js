@@ -41,14 +41,14 @@ const data = {
 async function loadI18n(lang) {
   try {
     const raw = await window.api.readI18n(lang);
-    translations = JSON.parse(raw);
+    translations = parseTranslations(raw);
     currentLang = lang;
     document.documentElement.lang = lang;
   } catch (e) { translations = {}; }
 }
 
 function t(key, ...args) {
-  let str = stripLeadingEmoji(translations[key] || key);
+  let str = translations[key] || key;
   args.forEach((arg, i) => { str = str.replace(`{${i}}`, arg); });
   return str;
 }
@@ -1370,7 +1370,8 @@ function updateCodePreview() {
   }
   lastGeneratedPreviewText = generated;
   if (codePreviewIsEditing && codePreviewHasManual) return;
-  const code = getCodePreviewText();
+  // The code was just generated: no need to generate it again
+  const code = codePreviewHasManual ? codePreviewManualText : generated;
   document.getElementById('code-preview').innerHTML = highlightRenpyCode(code);
 }
 
@@ -1540,24 +1541,6 @@ async function copyCode() {
   const code = codePreviewHasManual ? codePreviewManualText : generateCode(blocks);
   await navigator.clipboard.writeText(code);
   notify(t('code_copied'), 'ok');
-}
-
-function findInsertPosition(scriptText, labelName) {
-  if (!labelName) return scriptText.length;
-  const labelRe = new RegExp('^label\\s+' + labelName + '\\s*:', 'm');
-  const match = labelRe.exec(scriptText);
-  if (!match) return scriptText.length;
-  const searchFrom = match.index + match[0].length;
-  const nextLabelRe = /^label\s+\w+\s*:/gm;
-  nextLabelRe.lastIndex = searchFrom;
-  const nextMatch = nextLabelRe.exec(scriptText);
-  const labelEnd = nextMatch ? nextMatch.index : scriptText.length;
-  const labelContent = scriptText.slice(searchFrom, labelEnd);
-  const returnRe = /^[ \t]+return[ \t]*$/gm;
-  let lastReturn = null, m2;
-  while ((m2 = returnRe.exec(labelContent)) !== null) lastReturn = m2;
-  if (lastReturn) return searchFrom + lastReturn.index;
-  return labelEnd;
 }
 
 function buildModifiedScript(existing, newCode) {
@@ -3210,14 +3193,6 @@ function buildChoiceHtml(ch, i) {
     </div>
     <div id="cbl-${i}" class="choice-blocks-list"></div>
   </div>`;
-}
-
-function toggleChoiceAction(i) {
-  const action = document.querySelector(`input[name="ca-${i}"]:checked`)?.value || 'jump';
-  document.getElementById('caj-' + i).style.display = (action === 'code' || action === 'none' || action === 'blocks') ? 'none' : '';
-  document.getElementById('cac-' + i).style.display = action === 'code' ? '' : 'none';
-  document.getElementById('cab-' + i).style.display = action === 'blocks' ? '' : 'none';
-  if (action === 'blocks') renderChoiceBlocks(i);
 }
 
 // ── Choice inline blocks ──

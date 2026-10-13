@@ -43,7 +43,11 @@
       "src/**/*",
       "package.json",
       "android.js",
-      "android-helper.py"
+      "android-helper.py",
+      "!**/node_modules/**/*.map",
+      "!**/node_modules/**/*.d.ts",
+      "!**/node_modules/**/*.mjs",
+      "!**/node_modules/js-yaml/dist/**"
     ],
     "asarUnpack": [
       "mcp-bridge.js",
@@ -77,6 +81,21 @@
         "owner": "Thander11",
         "repo": "Ren-Py-EDITOR"
       }
+    ],
+    "electronLanguages": [
+      "en-US",
+      "en-GB",
+      "es",
+      "es-419",
+      "de",
+      "fr",
+      "it",
+      "pt-BR",
+      "pt-PT",
+      "ru",
+      "zh-CN",
+      "zh-TW",
+      "ja"
     ]
   }
 }
