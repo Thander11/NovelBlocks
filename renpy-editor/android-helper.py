@@ -20,7 +20,8 @@ def emit(kind, text="", **extra):
 
 def main():
     command, rapt_dir = sys.argv[1], sys.argv[2]
-    sys.path.insert(0, os.path.join(rapt_dir, "buildlib"))
+    # RAPT uses Ren'Py's own modules (renpy.compat), next to the rapt folder
+    sys.path[:0] = [os.path.join(rapt_dir, "buildlib"), os.path.dirname(os.path.abspath(rapt_dir))]
 
     import rapt.plat
     import rapt.interface
