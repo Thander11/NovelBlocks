@@ -68,6 +68,7 @@
   <h3>ブロックの追加と並べ替え</h3>
   <p><strong>{{palette_title}}</strong>パレットでは、ブロックが色ごとにまとめられています：<em>{{block_group_text}}、{{block_group_scene}}、{{block_group_flow}}、{{block_group_audio}}、{{block_group_advanced}}</em>（パッチを有効にしていれば<em>{{block_group_patch}}</em>も）。押すとフォームが開き、新しいブロックは<strong>選択中のブロックの下</strong>に入ります。</p>
   <p>ブロックをクリックすると選択され、操作（<em>{{btn_edit}}、{{btn_duplicate}}、{{btn_duplicate_end}}、{{btn_move_up}}、{{btn_move_down}}、{{btn_delete}}</em>）が表示され、プレビューにその時点のシーンが映ります。ダブルクリックで編集します。ドラッグで並べ替えることもできます。</p>
+  <p>別の場所に置くには、パレットからブロックの種類を好きな位置まで<strong>ドラッグ</strong>するか（線で落ちる位置が示されます）、2 つのブロックの間にマウスを合わせて現れる <strong>+</strong> を押し、そこに置くブロックを選びます。</p>
   <table>
     <tr><th>キー</th><th>操作</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>前または次のブロックを選択</td></tr>

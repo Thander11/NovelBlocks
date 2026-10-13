@@ -68,6 +68,7 @@
   <h3>Adicionar e organizar blocos</h3>
   <p>A paleta <strong>{{palette_title}}</strong> agrupa os blocos por cor: <em>{{block_group_text}}, {{block_group_scene}}, {{block_group_flow}}, {{block_group_audio}}, {{block_group_advanced}}</em> (e <em>{{block_group_patch}}</em> se você o ativou). Clicar em um abre seu formulário; o bloco novo entra <strong>abaixo do bloco selecionado</strong>.</p>
   <p>Clique em um bloco para selecioná-lo: aparecem suas ações (<em>{{btn_edit}}, {{btn_duplicate}}, {{btn_duplicate_end}}, {{btn_move_up}}, {{btn_move_down}}, {{btn_delete}}</em>) e a pré-visualização mostra a cena naquele momento. Clique duas vezes para editá-lo. Você também pode arrastar os blocos para reordená-los.</p>
+  <p>Para colocá-lo em outro lugar: <strong>arraste</strong> o tipo de bloco da paleta até onde quiser (uma linha mostra onde ele vai cair), ou passe o mouse entre dois blocos e clique no <strong>+</strong> que aparece para escolher qual bloco colocar ali.</p>
   <table>
     <tr><th>Tecla</th><th>Ação</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Selecionar o bloco anterior ou o seguinte</td></tr>

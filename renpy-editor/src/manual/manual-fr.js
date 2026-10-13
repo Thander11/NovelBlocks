@@ -68,6 +68,7 @@
   <h3>Ajouter et organiser les blocs</h3>
   <p>La palette <strong>{{palette_title}}</strong> regroupe les blocs par couleur : <em>{{block_group_text}}, {{block_group_scene}}, {{block_group_flow}}, {{block_group_audio}}, {{block_group_advanced}}</em> (et <em>{{block_group_patch}}</em> si tu l'as activé). Un clic ouvre son formulaire ; le nouveau bloc se place <strong>sous le bloc sélectionné</strong>.</p>
   <p>Clique sur un bloc pour le sélectionner : ses actions apparaissent (<em>{{btn_edit}}, {{btn_duplicate}}, {{btn_duplicate_end}}, {{btn_move_up}}, {{btn_move_down}}, {{btn_delete}}</em>) et l'aperçu montre la scène à ce moment. Double-clic pour le modifier. Tu peux aussi faire glisser les blocs pour les réordonner.</p>
+  <p>Pour le placer ailleurs : <strong>fais glisser</strong> le type de bloc depuis la palette jusqu'à l'endroit voulu (une ligne indique où il tombera), ou passe la souris entre deux blocs et clique sur le <strong>+</strong> qui apparaît pour choisir le bloc à y mettre.</p>
   <table>
     <tr><th>Touche</th><th>Action</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Sélectionner le bloc précédent ou suivant</td></tr>

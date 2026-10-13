@@ -68,6 +68,7 @@
   <h3>Añadir y organizar bloques</h3>
   <p>La paleta <strong>Añadir bloque</strong> agrupa los bloques por colores: <em>Texto, Escena, Flujo, Audio, Avanzado</em> (y <em>Parche</em> si lo has activado). Al pulsar uno se abre su formulario; el bloque nuevo se coloca <strong>debajo del bloque seleccionado</strong>.</p>
   <p>Haz clic en un bloque para seleccionarlo: aparecen sus acciones (<em>Editar, Duplicar debajo, Duplicar al final, Subir, Bajar, Eliminar</em>) y la vista previa muestra la escena en ese momento. Doble clic para editarlo. También puedes arrastrar los bloques para reordenarlos.</p>
+  <p>Para ponerlo en otro sitio: <strong>arrastra</strong> el tipo de bloque desde la paleta hasta donde quieras (una línea marca dónde caerá), o pasa el ratón entre dos bloques y pulsa el <strong>+</strong> que aparece para elegir qué bloque poner ahí.</p>
   <table>
     <tr><th>Tecla</th><th>Acción</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Seleccionar el bloque anterior o siguiente</td></tr>

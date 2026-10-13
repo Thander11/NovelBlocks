@@ -68,6 +68,7 @@
   <h3>Blöcke hinzufügen und anordnen</h3>
   <p>Die Palette <strong>{{palette_title}}</strong> gruppiert die Blöcke nach Farben: <em>{{block_group_text}}, {{block_group_scene}}, {{block_group_flow}}, {{block_group_audio}}, {{block_group_advanced}}</em> (und <em>{{block_group_patch}}</em>, wenn du ihn aktiviert hast). Ein Klick öffnet das Formular; der neue Block kommt <strong>unter den ausgewählten Block</strong>.</p>
   <p>Klicke auf einen Block, um ihn auszuwählen: Seine Aktionen erscheinen (<em>{{btn_edit}}, {{btn_duplicate}}, {{btn_duplicate_end}}, {{btn_move_up}}, {{btn_move_down}}, {{btn_delete}}</em>) und die Vorschau zeigt die Szene in diesem Moment. Doppelklick zum Bearbeiten. Du kannst Blöcke auch ziehen, um sie neu anzuordnen.</p>
+  <p>Um ihn woanders einzufügen: <strong>Ziehe</strong> den Blocktyp aus der Palette an die gewünschte Stelle (eine Linie zeigt, wo er landet), oder fahre mit der Maus zwischen zwei Blöcke und klicke auf das erscheinende <strong>+</strong>, um zu wählen, welcher Block dort hinkommt.</p>
   <table>
     <tr><th>Taste</th><th>Aktion</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Vorherigen oder nächsten Block auswählen</td></tr>

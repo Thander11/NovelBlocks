@@ -68,6 +68,7 @@
   <h3>添加和排列块</h3>
   <p><strong>{{palette_title}}</strong>面板按颜色给块分组：<em>{{block_group_text}}、{{block_group_scene}}、{{block_group_flow}}、{{block_group_audio}}、{{block_group_advanced}}</em>（如果已开启补丁，还有<em>{{block_group_patch}}</em>）。点击会打开它的表单；新块会放在<strong>所选块的下方</strong>。</p>
   <p>点击一个块即可选中：会出现它的操作（<em>{{btn_edit}}、{{btn_duplicate}}、{{btn_duplicate_end}}、{{btn_move_up}}、{{btn_move_down}}、{{btn_delete}}</em>），预览会显示该时刻的场景。双击可编辑。也可以拖动块来调整顺序。</p>
+  <p>要放到其他位置：从面板中把块类型<strong>拖</strong>到想要的位置（会有一条线标出落点），或把鼠标移到两个块之间，点击出现的 <strong>+</strong> 来选择要插入的块。</p>
   <table>
     <tr><th>按键</th><th>操作</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>选择上一个或下一个块</td></tr>

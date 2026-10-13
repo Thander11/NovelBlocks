@@ -68,6 +68,7 @@
   <h3>Aggiungere e ordinare i blocchi</h3>
   <p>La tavolozza <strong>{{palette_title}}</strong> raggruppa i blocchi per colore: <em>{{block_group_text}}, {{block_group_scene}}, {{block_group_flow}}, {{block_group_audio}}, {{block_group_advanced}}</em> (e <em>{{block_group_patch}}</em> se l'hai attivata). Un clic apre il suo modulo; il nuovo blocco va <strong>sotto il blocco selezionato</strong>.</p>
   <p>Fai clic su un blocco per selezionarlo: compaiono le sue azioni (<em>{{btn_edit}}, {{btn_duplicate}}, {{btn_duplicate_end}}, {{btn_move_up}}, {{btn_move_down}}, {{btn_delete}}</em>) e l'anteprima mostra la scena in quel momento. Doppio clic per modificarlo. Puoi anche trascinare i blocchi per riordinarli.</p>
+  <p>Per metterlo altrove: <strong>trascina</strong> il tipo di blocco dalla tavolozza dove vuoi (una linea mostra dove finirà), oppure passa il mouse tra due blocchi e premi il <strong>+</strong> che compare per scegliere quale blocco mettere lì.</p>
   <table>
     <tr><th>Tasto</th><th>Azione</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Selezionare il blocco precedente o successivo</td></tr>

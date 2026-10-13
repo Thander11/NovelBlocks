@@ -68,6 +68,7 @@
   <h3>新增和排列區塊</h3>
   <p><strong>{{palette_title}}</strong>面板依顏色將區塊分組：<em>{{block_group_text}}、{{block_group_scene}}、{{block_group_flow}}、{{block_group_audio}}、{{block_group_advanced}}</em>（如果已開啟補丁，還有<em>{{block_group_patch}}</em>）。點選會開啟它的表單；新區塊會放在<strong>所選區塊的下方</strong>。</p>
   <p>點選一個區塊即可選取：會出現它的操作（<em>{{btn_edit}}、{{btn_duplicate}}、{{btn_duplicate_end}}、{{btn_move_up}}、{{btn_move_down}}、{{btn_delete}}</em>），預覽會顯示該時刻的場景。按兩下可編輯。也可以拖曳區塊來調整順序。</p>
+  <p>要放到其他位置：從面板中把區塊類型<strong>拖曳</strong>到想要的位置（會有一條線標出落點），或把滑鼠移到兩個區塊之間，點選出現的 <strong>+</strong> 來選擇要插入的區塊。</p>
   <table>
     <tr><th>按鍵</th><th>操作</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>選取上一個或下一個區塊</td></tr>

@@ -68,6 +68,7 @@
   <h3>Adding and arranging blocks</h3>
   <p>The <strong>Add block</strong> palette groups blocks by color: <em>Text, Scene, Flow, Audio, Advanced</em> (and <em>Patch</em> if you turned it on). Clicking one opens its form; the new block goes <strong>below the selected block</strong>.</p>
   <p>Click a block to select it: its actions appear (<em>Edit, Duplicate below, Duplicate to end, Move up, Move down, Delete</em>) and the preview shows the scene at that moment. Double-click to edit it. You can also drag blocks to reorder them.</p>
+  <p>To put it somewhere else: <strong>drag</strong> the block type from the palette to where you want it (a line shows where it will land), or move the mouse between two blocks and click the <strong>+</strong> that appears to choose which block goes there.</p>
   <table>
     <tr><th>Key</th><th>Action</th></tr>
     <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Select the previous or next block</td></tr>
