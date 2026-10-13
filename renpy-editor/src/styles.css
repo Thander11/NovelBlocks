@@ -1582,3 +1582,14 @@ button:disabled, input:disabled, select:disabled { opacity: 0.55; cursor: not-al
 }
 #app.sb-collapsed .sb-collapse:hover, #app.sb-collapsed .sb-collapse:focus-visible { background: var(--accent2); color: var(--on-accent); }
 .sb-collapse-text:empty { display: none; }
+
+/* ── About and credits (Settings) ── */
+#credits .settings-hint { margin: 0 0 6px; }
+.credits-list summary { cursor: pointer; font-size: 12.5px; font-weight: 700; color: var(--text2); padding: 4px 0; }
+.credits-list summary:hover { color: var(--text); }
+.credits-list ul { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.credits-list li { display: flex; flex-direction: column; gap: 1px; font-size: 12px; line-height: 1.45; }
+.credits-list a { font-weight: 700; color: var(--accent); text-decoration: none; }
+.credits-list a:hover, .credits-list a:focus-visible { text-decoration: underline; }
+.credits-meta { font-size: 11px; color: var(--text3); }
+.credits-text { color: var(--text2); }

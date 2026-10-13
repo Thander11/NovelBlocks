@@ -10,6 +10,7 @@
   <p>Ren'Py EDITOR は、<a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a> でビジュアルノベルを作るためのビジュアルエディターです。すべてのコードを手で書く代わりに、<strong>ブロック</strong>（セリフ、背景の切り替え、キャラクターの登場と退場、選択肢など）を並べて各シーンを作ると、エディターが Ren'Py のコードを書いてくれます。コードはいつでも表示でき、直接編集することもできます。</p>
   <p>エディターは Ren'Py プロジェクトのファイルをそのまま扱います。ここで保存したものは普通のプロジェクトなので、Ren'Py のランチャーやテキストエディターでも開けます。</p>
   <div class="man-note"><strong>コードの用語。</strong>Ren'Py のコードに由来する名前（<code>label</code>、<code>jump</code>、<code>call</code>、<code>Solid</code> など）は、コードと一致するようにすべての言語で同じ表記にしています。</div>
+  <p>Ren'Py EDITOR は独立した非公式のツールで、Ren'Py プロジェクトとは提携しておらず、承認も受けていません。クレジットとライセンスは<em>設定 → このアプリについて・クレジット</em>にあります。</p>
 </section>
 
 <section id="start">

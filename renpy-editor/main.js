@@ -180,6 +180,11 @@ function createMainWindow() {
   });
   mainWindow.loadFile(path.join(__dirname, 'src', 'index.html'));
   attachEditContextMenu(mainWindow);
+  // Web links (credits, manual) open in the user's browser, never in a window of the editor
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    if (/^https?:\/\//i.test(url)) shell.openExternal(url);
+    return { action: 'deny' };
+  });
 
   // Only the editor pages of src/ can be embedded, each one with its own preload
   const srcURL = require('url').pathToFileURL(path.join(__dirname, 'src') + path.sep).href;

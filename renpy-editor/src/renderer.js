@@ -237,6 +237,7 @@ async function changeLanguage(lang) {
   if (document.getElementById('manual-screen').classList.contains('open')) renderManual();
   if (typeof applySidebar === 'function') applySidebar();
   if (typeof renderUpdates === 'function') renderUpdates();
+  if (typeof renderCredits === 'function') renderCredits();
   renderBlocks();
   renderAssetBrowser();
   updateCodePreview();
@@ -4882,6 +4883,7 @@ function savePanelSize(r, v) {
   initSpellcheckSettings(s);
   initClaudeSettings();
   if (typeof initUpdates === 'function') initUpdates();
+  if (typeof renderCredits === 'function') renderCredits();
   hydrateIcons();
   renderBlocks();
   updateCodePreview();

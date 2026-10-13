@@ -10,6 +10,7 @@
   <p>Ren'Py EDITOR 是一款用 <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a> 製作視覺小說的視覺化編輯器。你不必手寫所有程式碼，而是用<strong>區塊</strong>（對話、更換背景、角色登場與退場、選項……）來組合每個場景，編輯器會替你寫出 Ren'Py 程式碼。只要你想，程式碼隨時可見，也能直接修改。</p>
   <p>編輯器直接處理你的 Ren'Py 專案檔案：在這裡儲存的就是一般的專案，也可以用 Ren'Py 啟動器或任何文字編輯器開啟。</p>
   <div class="man-note"><strong>程式碼詞彙。</strong>來自 Ren'Py 程式碼的名稱（<code>label</code>、<code>jump</code>、<code>call</code>、<code>Solid</code>……）在所有語言中保持不變，以便與程式碼中看到的一致。</div>
+  <p>Ren'Py EDITOR 是一個獨立的非官方工具，與 Ren'Py 專案沒有關聯，也未獲其認可。致謝與授權條款見<em>設定 → 關於與致謝</em>。</p>
 </section>
 
 <section id="start">

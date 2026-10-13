@@ -10,6 +10,7 @@
   <p>Ren'Py EDITOR è un editor visuale per creare visual novel con <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Invece di scrivere tutto il codice a mano, costruisci ogni scena con dei <strong>blocchi</strong> (dialoghi, cambi di sfondo, personaggi che entrano ed escono, scelte…) e l'editor scrive il codice Ren'Py per te. Il codice resta sempre visibile se lo vuoi, e puoi modificarlo direttamente.</p>
   <p>L'editor lavora sui file del tuo progetto Ren'Py: ciò che salvi qui è un progetto normale, che puoi aprire anche con il launcher di Ren'Py o con qualsiasi editor di testo.</p>
   <div class="man-note"><strong>Parole del codice.</strong> I nomi che vengono dal codice di Ren'Py (<code>label</code>, <code>jump</code>, <code>call</code>, <code>Solid</code>…) restano uguali in tutte le lingue, così coincidono con ciò che vedi nel codice.</div>
+  <p>Ren'Py EDITOR è uno strumento indipendente e non ufficiale: non è affiliato né approvato dal progetto Ren'Py. Crediti e licenze sono in <em>Impostazioni → Informazioni e crediti</em>.</p>
 </section>
 
 <section id="start">
