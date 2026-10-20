@@ -1,5 +1,5 @@
 @echo off
-REM Arranca el Ren'Py Editor
+REM Arranca el NovelBlocks
 cd /d "%~dp0"
 npm start
 pause

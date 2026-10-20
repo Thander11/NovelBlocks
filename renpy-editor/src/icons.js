@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Stroke icons (24×24, drawn with currentColor)
+// NovelBlocks — Stroke icons (24×24, drawn with currentColor)
 // Static markup uses <span class="icon" data-icon="name"></span>,
 // filled in by hydrateIcons(); scripts call icon(name).
 // ═══════════════════════════════════════════════════════════

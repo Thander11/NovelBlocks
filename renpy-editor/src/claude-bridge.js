@@ -92,7 +92,7 @@ const claudeTools = {
 window.api.onMcpCall(async (tool, args) => {
   const fn = claudeTools[tool];
   if (!fn) throw new Error(`Unknown tool: ${tool}`);
-  if (!gamePath) throw new Error('No project is open in Ren\'Py EDITOR.');
+  if (!gamePath) throw new Error('No project is open in NovelBlocks.');
   return fn(args || {});
 });
 
@@ -105,7 +105,7 @@ async function initClaudeSettings() {
 }
 
 function claudeAddCommand(s) {
-  return `claude mcp add --transport http --scope user renpy-editor ${s.url} --header "Authorization: Bearer ${s.token}"`;
+  return `claude mcp add --transport http --scope user novelblocks ${s.url} --header "Authorization: Bearer ${s.token}"`;
 }
 
 function renderClaudeSettings() {

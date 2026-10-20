@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Putting a new block exactly where it goes:
+// NovelBlocks — Putting a new block exactly where it goes:
 // dragging it from the palette into the list, or with the "+"
 // that shows between two blocks.
 // ═══════════════════════════════════════════════════════════

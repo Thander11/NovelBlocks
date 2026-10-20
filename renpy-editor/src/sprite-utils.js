@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Sprite naming helpers (shared by both windows)
+// NovelBlocks — Sprite naming helpers (shared by both windows)
 // Sprite keys follow the format: <characterId>_<type>_<identifier>
 // ═══════════════════════════════════════════════════════════
 

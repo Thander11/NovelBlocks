@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Renderer (Main Window)
+// NovelBlocks — Renderer (Main Window)
 // ═══════════════════════════════════════════════════════════════════
 
 // ── State ──
@@ -1038,7 +1038,7 @@ function patchFileCode(list, owner) {
   const parts = list.filter(isPatchBlock);
   if (!parts.length) return '';
   assignPatchLabels(list);
-  return `## Patch content of the label ${owner}. Ren'Py EDITOR writes this file.\n` + parts.map(b => {
+  return `## Patch content of the label ${owner}. NovelBlocks writes this file.\n` + parts.map(b => {
     const title = (b.title || '').replace(/[\r\n]+/g, ' ').trim();
     const body = (b.blocks || []).map(ib => blockToCode(ib, '    ')).filter(Boolean).join('\n\n') || '    pass';
     return `\nlabel ${b.patchLabel}:${title ? '  # ' + title : ''}\n${body}\n\n    return\n`;

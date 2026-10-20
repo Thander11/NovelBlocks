@@ -22,7 +22,7 @@ function connection() {
   }
 }
 
-const NOT_OPEN = 'Ren\'Py EDITOR is not open, or its connection with Claude is turned off. Ask the user to open the editor and turn on Settings › Connection with Claude.';
+const NOT_OPEN = 'NovelBlocks is not open, or its connection with Claude is turned off. Ask the user to open the editor and turn on Settings › Connection with Claude.';
 
 function post(body) {
   const { enabled, port, token } = connection();

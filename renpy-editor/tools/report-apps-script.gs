@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-// Ren'Py EDITOR — receives the reports and suggestions sent from the
+// NovelBlocks — receives the reports and suggestions sent from the
 // app and emails them to the author. Runs in the author's own Google
 // account as an Apps Script web app (see the steps below).
 //
@@ -49,7 +49,7 @@ function doPost(e) {
       Object.keys(d.tech).slice(0, 20).forEach(k => lines.push('  ' + clean(k, 40) + ': ' + clean(String(d.tech[k]), 200)));
     }
 
-    const options = { to: TO, subject: "[Ren'Py EDITOR] " + kind + ': ' + title, body: lines.join('\n'), name: "Ren'Py EDITOR" };
+    const options = { to: TO, subject: "[NovelBlocks] " + kind + ': ' + title, body: lines.join('\n'), name: "NovelBlocks" };
     if (replyTo) options.replyTo = replyTo;
     MailApp.sendEmail(options);
     return reply({ ok: true });

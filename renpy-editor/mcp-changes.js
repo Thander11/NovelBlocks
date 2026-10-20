@@ -15,7 +15,7 @@ const hashFile = (fp) => fs.existsSync(fp) ? crypto.createHash('sha1').update(fs
 function createChangeLog({ getGamePath, onChange = () => {} }) {
   function dirs() {
     const gp = getGamePath();
-    if (!gp) throw new Error('No project is open in Ren\'Py EDITOR.');
+    if (!gp) throw new Error('No project is open in NovelBlocks.');
     const base = path.join(path.dirname(path.resolve(gp)), '.renpy-editor');
     return { gp: path.resolve(gp), base, backups: path.join(base, 'backups'), logFile: path.join(base, 'claude-changes.json') };
   }

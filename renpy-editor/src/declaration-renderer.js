@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Declaration Window Renderer
+// NovelBlocks — Declaration Window Renderer
 // ═══════════════════════════════════════════════════════════
 
 let gamePath = '';

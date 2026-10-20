@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Report a problem or suggest something. It goes
+// NovelBlocks — Report a problem or suggest something. It goes
 // to the author's email (main.js sends it) or, for those who
 // prefer it, opens a GitHub issue already filled in.
 // ═══════════════════════════════════════════════════════════

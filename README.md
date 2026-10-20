@@ -1,4 +1,4 @@
-# Ren-Py-EDITOR
+# NovelBlocks
 Visual editor for Ren'Py that lets you create visual novels without coding. Manage assets like characters, sprites, and backgrounds using draggable blocks. Automatically generates clean code with real-time preview.
 
 ## Features
@@ -51,8 +51,8 @@ On Windows you can also run `renpy-editor/start.bat`.
 
 ## Credits and license
 
-Ren'Py EDITOR is an independent, unofficial tool. It uses [Ren'Py](https://www.renpy.org), created by Tom Rothamel and contributors and released under the MIT license, but it isn't affiliated with or endorsed by the Ren'Py project.
+NovelBlocks is an independent, unofficial tool. It uses [Ren'Py](https://www.renpy.org), created by Tom Rothamel and contributors and released under the MIT license, but it isn't affiliated with or endorsed by the Ren'Py project.
 
 The editor doesn't include Ren'Py: it uses the Ren'Py SDK installed on your computer, or downloads it from renpy.org. It's built with [Electron](https://www.electronjs.org) (MIT) and [electron-updater](https://www.electron.build) (MIT), and uses the Manrope and DM Mono fonts (SIL Open Font License). For Android builds it downloads [Eclipse Temurin](https://adoptium.net) (GPLv2 with Classpath Exception) and the [Android SDK](https://developer.android.com/studio/terms), whose terms you accept from the editor.
 
-Ren'Py EDITOR itself is released under the [MIT license](LICENSE).
+NovelBlocks itself is released under the [MIT license](LICENSE).

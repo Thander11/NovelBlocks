@@ -1,16 +1,16 @@
-// Ren'Py EDITOR — Benutzerhandbuch (Deutsch). {{key}} = Text der Oberfläche
+// NovelBlocks — Benutzerhandbuch (Deutsch). {{key}} = Text der Oberfläche
 (window.MANUALS = window.MANUALS || {}).de = {
-  title: 'Handbuch zu Ren\'Py EDITOR',
+  title: 'Handbuch zu NovelBlocks',
   search: 'Im Handbuch suchen',
   contents: 'Inhalt',
   noResults: 'Kein Abschnitt enthält diesen Text.',
   html: `
 <section id="intro">
   <h2>Willkommen</h2>
-  <p>Ren'Py EDITOR ist ein visueller Editor für Visual Novels mit <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Statt den gesamten Code von Hand zu schreiben, baust du jede Szene aus <strong>Blöcken</strong> (Dialoge, Hintergrundwechsel, Figuren, die kommen und gehen, Entscheidungen…) und der Editor schreibt den Ren'Py-Code für dich. Der Code ist jederzeit sichtbar, wenn du willst, und du kannst ihn direkt bearbeiten.</p>
+  <p>NovelBlocks ist ein visueller Editor für Visual Novels mit <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Statt den gesamten Code von Hand zu schreiben, baust du jede Szene aus <strong>Blöcken</strong> (Dialoge, Hintergrundwechsel, Figuren, die kommen und gehen, Entscheidungen…) und der Editor schreibt den Ren'Py-Code für dich. Der Code ist jederzeit sichtbar, wenn du willst, und du kannst ihn direkt bearbeiten.</p>
   <p>Der Editor arbeitet mit den Dateien deines Ren'Py-Projekts: Was du hier speicherst, ist ein normales Projekt, das du auch mit dem Ren'Py-Launcher oder einem beliebigen Texteditor öffnen kannst.</p>
   <div class="man-note"><strong>Code-Wörter.</strong> Namen aus dem Ren'Py-Code (<code>label</code>, <code>jump</code>, <code>call</code>, <code>Solid</code>…) bleiben in allen Sprachen gleich, damit sie zu dem passen, was du im Code siehst.</div>
-  <p>Ren'Py EDITOR ist ein unabhängiges, inoffizielles Werkzeug: Es ist nicht mit dem Ren'Py-Projekt verbunden oder von ihm unterstützt. Danksagungen und Lizenzen findest du unter <em>Einstellungen → Über und Danksagungen</em>.</p>
+  <p>NovelBlocks ist ein unabhängiges, inoffizielles Werkzeug: Es ist nicht mit dem Ren'Py-Projekt verbunden oder von ihm unterstützt. Danksagungen und Lizenzen findest du unter <em>Einstellungen → Über und Danksagungen</em>.</p>
 </section>
 
 <section id="start">

@@ -1,10 +1,10 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — About and credits in Settings: the editor is
+// NovelBlocks — About and credits in Settings: the editor is
 // an unofficial tool, and the software it uses or downloads.
 // ═══════════════════════════════════════════════════════════
 
 // The app's name in the credits (one place, in case it changes)
-const CREDITS_APP_NAME = "Ren'Py EDITOR";
+const CREDITS_APP_NAME = "NovelBlocks";
 
 // Names, authors and licenses stay as they are in every language
 const CREDITS = [

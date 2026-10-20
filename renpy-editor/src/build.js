@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Build: packages the game for each system with
+// NovelBlocks — Build: packages the game for each system with
 // Ren'Py's own "distribute" command (run by main.js)
 // ═══════════════════════════════════════════════════════════
 

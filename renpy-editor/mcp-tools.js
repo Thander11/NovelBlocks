@@ -8,7 +8,7 @@ const path = require('path');
 const os = require('os');
 const CharactersFile = require('./src/characters-file');
 
-const INSTRUCTIONS = `This server is Ren'Py EDITOR, a visual editor for Ren'Py visual novels that the user has open on their computer.
+const INSTRUCTIONS = `This server is NovelBlocks, a visual editor for Ren'Py visual novels that the user has open on their computer.
 Use these tools to understand the user's novel: its scenes (Ren'Py labels), the jumps, calls and decisions between them, characters, images, audio, story variables and GUI settings.
 Start with get_project_overview, then get_story_map to see how the story flows, and read_label to read the code of a scene.
 Ren'Py terms such as label, jump, call, menu, scene, show and define keep their code names.
@@ -22,7 +22,7 @@ const READ_ONLY = { readOnlyHint: true, destructiveHint: false, openWorldHint: f
 function buildMcpTools({ getGamePath, askRenderer, readGameInfo, changes, saveGameInfo, renderSceneImage, launchGame }) {
   function gamePathOrThrow() {
     const gp = getGamePath();
-    if (!gp || !fs.existsSync(gp)) throw new Error('No project is open in Ren\'Py EDITOR. Ask the user to open their novel first.');
+    if (!gp || !fs.existsSync(gp)) throw new Error('No project is open in NovelBlocks. Ask the user to open their novel first.');
     return gp;
   }
 
@@ -291,7 +291,7 @@ function buildWriteTools({ gamePathOrThrow, rpyFiles, resolveRpy, findLabel, cha
     queue = run.catch(() => {});
     return run;
   };
-  const done = (entry, text) => `${text}\nChange ${entry.id} — the user can undo it from Ren'Py EDITOR (Settings › Connection with Claude › Changes).`;
+  const done = (entry, text) => `${text}\nChange ${entry.id} — the user can undo it from NovelBlocks (Settings › Connection with Claude › Changes).`;
 
   // New .rpy files go in game/ itself, where the editor finds them
   function rpyTarget(gp, file) {

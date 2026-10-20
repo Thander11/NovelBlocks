@@ -1,16 +1,16 @@
-// Ren'Py EDITOR — Manual de uso (português do Brasil). {{key}} = texto da interface
+// NovelBlocks — Manual de uso (português do Brasil). {{key}} = texto da interface
 (window.MANUALS = window.MANUALS || {})['pt-BR'] = {
-  title: 'Manual do Ren\'Py EDITOR',
+  title: 'Manual do NovelBlocks',
   search: 'Buscar no manual',
   contents: 'Sumário',
   noResults: 'Nenhuma seção contém esse texto.',
   html: `
 <section id="intro">
   <h2>Boas-vindas</h2>
-  <p>O Ren'Py EDITOR é um editor visual para criar visual novels com o <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Em vez de escrever todo o código à mão, você monta cada cena com <strong>blocos</strong> (diálogos, trocas de fundo, personagens que entram e saem, escolhas…) e o editor escreve o código do Ren'Py para você. O código fica sempre à vista se você quiser, e dá para editá-lo diretamente.</p>
+  <p>O NovelBlocks é um editor visual para criar visual novels com o <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Em vez de escrever todo o código à mão, você monta cada cena com <strong>blocos</strong> (diálogos, trocas de fundo, personagens que entram e saem, escolhas…) e o editor escreve o código do Ren'Py para você. O código fica sempre à vista se você quiser, e dá para editá-lo diretamente.</p>
   <p>O editor trabalha com os arquivos do seu projeto do Ren'Py: o que você salva aqui é um projeto normal, que também pode ser aberto no launcher do Ren'Py ou em qualquer editor de texto.</p>
   <div class="man-note"><strong>Palavras do código.</strong> Os nomes que vêm do código do Ren'Py (<code>label</code>, <code>jump</code>, <code>call</code>, <code>Solid</code>…) continuam iguais em todos os idiomas, para coincidirem com o que você vê no código.</div>
-  <p>O Ren'Py EDITOR é uma ferramenta independente e não oficial: não é afiliada nem endossada pelo projeto Ren'Py. Os créditos e licenças estão em <em>Configurações → Sobre e créditos</em>.</p>
+  <p>O NovelBlocks é uma ferramenta independente e não oficial: não é afiliada nem endossada pelo projeto Ren'Py. Os créditos e licenças estão em <em>Configurações → Sobre e créditos</em>.</p>
 </section>
 
 <section id="start">

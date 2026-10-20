@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — User manual screen. Every language has its own
+// NovelBlocks — User manual screen. Every language has its own
 // manual (src/manual/manual-<lang>.js), loaded the first time it's
 // shown; English when one is missing.
 // {{key}} in a manual is the editor's own text for that i18n key, so

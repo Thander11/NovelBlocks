@@ -1,16 +1,16 @@
-// Ren'Py EDITOR — 使用手册（简体中文）。{{key}} = 界面上的文字
+// NovelBlocks — 使用手册（简体中文）。{{key}} = 界面上的文字
 (window.MANUALS = window.MANUALS || {})['zh-CN'] = {
-  title: 'Ren\'Py EDITOR 使用手册',
+  title: 'NovelBlocks 使用手册',
   search: '搜索手册',
   contents: '目录',
   noResults: '没有章节包含这段文字。',
   html: `
 <section id="intro">
   <h2>欢迎</h2>
-  <p>Ren'Py EDITOR 是一款用 <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a> 制作视觉小说的可视化编辑器。你不必手写全部代码，而是用<strong>块</strong>（对话、更换背景、角色登场和退场、选项……）来搭建每个场景，编辑器会替你写出 Ren'Py 代码。只要你愿意，代码随时可见，也可以直接修改。</p>
+  <p>NovelBlocks 是一款用 <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a> 制作视觉小说的可视化编辑器。你不必手写全部代码，而是用<strong>块</strong>（对话、更换背景、角色登场和退场、选项……）来搭建每个场景，编辑器会替你写出 Ren'Py 代码。只要你愿意，代码随时可见，也可以直接修改。</p>
   <p>编辑器直接处理你的 Ren'Py 项目文件：在这里保存的就是一个普通项目，也可以用 Ren'Py 启动器或任何文本编辑器打开。</p>
   <div class="man-note"><strong>代码词汇。</strong>来自 Ren'Py 代码的名称（<code>label</code>、<code>jump</code>、<code>call</code>、<code>Solid</code>……）在所有语言中保持不变，以便与代码中看到的一致。</div>
-  <p>Ren'Py EDITOR 是一个独立的非官方工具，与 Ren'Py 项目没有关联，也未获其认可。致谢与许可证见<em>设置 → 关于与致谢</em>。</p>
+  <p>NovelBlocks 是一个独立的非官方工具，与 Ren'Py 项目没有关联，也未获其认可。致谢与许可证见<em>设置 → 关于与致谢</em>。</p>
 </section>
 
 <section id="start">

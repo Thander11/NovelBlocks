@@ -15,9 +15,9 @@ function setupUpdates({ getWindow }) {
     if (win) win.webContents.send('update-status', status);
   };
 
-  // Only an installed editor updates itself; RENPY_EDITOR_UPDATE_URL points a
+  // Only an installed editor updates itself; NOVELBLOCKS_UPDATE_URL points a
   // development copy at a test server
-  const testFeed = process.env.RENPY_EDITOR_UPDATE_URL;
+  const testFeed = process.env.NOVELBLOCKS_UPDATE_URL;
   const enabled = app.isPackaged || !!testFeed;
   let autoUpdater = null;
   if (enabled) {

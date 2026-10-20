@@ -1,13 +1,13 @@
 # Cómo publicar una versión nueva del editor
 
 Los editores instalados buscan versiones nuevas en las **GitHub Releases** de
-[Thander11/Ren-Py-EDITOR](https://github.com/Thander11/Ren-Py-EDITOR/releases),
+[Thander11/NovelBlocks](https://github.com/Thander11/NovelBlocks/releases),
 las descargan solos y se actualizan al reiniciar.
 
 ## Una sola vez
 
 1. Crea un token de GitHub: <https://github.com/settings/tokens> → *Fine-grained token*,
-   solo para el repositorio `Ren-Py-EDITOR`, con permiso **Contents: Read and write**.
+   solo para el repositorio `NovelBlocks`, con permiso **Contents: Read and write**.
 2. Guárdalo como variable de entorno `GH_TOKEN` (en Windows: *Editar las variables de
    entorno de esta cuenta* → Nueva → `GH_TOKEN`). No lo pongas nunca en un archivo del proyecto.
 3. Asegúrate de que `report.config.json` existe en la carpeta del editor (ver

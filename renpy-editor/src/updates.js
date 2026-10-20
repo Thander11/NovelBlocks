@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — The editor's own updates: the version and a
+// NovelBlocks — The editor's own updates: the version and a
 // button in Settings, and a notice when a new version is ready.
 // ═══════════════════════════════════════════════════════════
 

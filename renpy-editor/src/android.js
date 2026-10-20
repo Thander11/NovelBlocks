@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Android in the Build dialog: APK and AAB,
+// NovelBlocks — Android in the Build dialog: APK and AAB,
 // the steps to set up the tools the first time, and the app's
 // details (android.json). main.js (android.js) does the work.
 // ═══════════════════════════════════════════════════════════

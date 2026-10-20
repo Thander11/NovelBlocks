@@ -1,4 +1,4 @@
-# Ren'Py EDITOR — runs RAPT (Ren'Py's Android packaging tool) without
+# NovelBlocks — runs RAPT (Ren'Py's Android packaging tool) without
 # questions on the console: the editor asks the user first (for example,
 # to accept the Android SDK terms) and reads progress as JSON lines.
 #

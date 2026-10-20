@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Patch: content kept out of the game (for example,
+// NovelBlocks — Patch: content kept out of the game (for example,
 // its Steam version) and packed apart for players to add. The files
 // are handled by main.js; this is the Patch tab of the game settings,
 // the patch images picker and what the build dialog shows.

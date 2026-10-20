@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Keeps characters.rpy in its usual order:
+// NovelBlocks — Keeps characters.rpy in its usual order:
 //
 //   # Unknown                      ← characters without sprites, first,
 //   define Alumna = Character(…)      in the order they were added

@@ -1,16 +1,16 @@
-// Ren'Py EDITOR — User manual (English; shown for every language except Spanish)
+// NovelBlocks — User manual (English; shown for every language except Spanish)
 (window.MANUALS = window.MANUALS || {}).en = {
-  title: 'Ren\'Py EDITOR manual',
+  title: 'NovelBlocks manual',
   search: 'Search the manual',
   contents: 'Contents',
   noResults: 'No section contains that text.',
   html: `
 <section id="intro">
   <h2>Welcome</h2>
-  <p>Ren'Py EDITOR is a visual editor for making visual novels with <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Instead of writing all the code by hand, you build each scene out of <strong>blocks</strong> (dialogue, background changes, characters coming and going, choices…) and the editor writes the Ren'Py code for you. The code is always there if you want to see it, and you can edit it directly.</p>
+  <p>NovelBlocks is a visual editor for making visual novels with <a href="https://www.renpy.org" target="_blank" rel="noopener">Ren'Py</a>. Instead of writing all the code by hand, you build each scene out of <strong>blocks</strong> (dialogue, background changes, characters coming and going, choices…) and the editor writes the Ren'Py code for you. The code is always there if you want to see it, and you can edit it directly.</p>
   <p>The editor works on your Ren'Py project's own files: what you save here is a normal project that you can also open with the Ren'Py launcher or any text editor.</p>
   <div class="man-note"><strong>Code words.</strong> Names that come from Ren'Py code (<code>label</code>, <code>jump</code>, <code>call</code>, <code>Solid</code>…) stay the same in every language, so they match what you see in the code.</div>
-  <p>Ren'Py EDITOR is an independent, unofficial tool: it isn't affiliated with or endorsed by the Ren'Py project. Credits and licenses are in <em>Settings → About and credits</em>.</p>
+  <p>NovelBlocks is an independent, unofficial tool: it isn't affiliated with or endorsed by the Ren'Py project. Credits and licenses are in <em>Settings → About and credits</em>.</p>
 </section>
 
 <section id="start">

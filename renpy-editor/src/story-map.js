@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Story map: the project's labels as cards,
+// NovelBlocks — Story map: the project's labels as cards,
 // joined by their jumps, calls and menu choices
 // ═══════════════════════════════════════════════════════════
 

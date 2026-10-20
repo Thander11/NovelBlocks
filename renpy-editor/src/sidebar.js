@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Folding sidebar. Folded, it comes out while the
+// NovelBlocks — Folding sidebar. Folded, it comes out while the
 // mouse is at the left edge of the window (or while the keyboard is
 // inside it) and hides again when the mouse leaves.
 // ═══════════════════════════════════════════════════════════

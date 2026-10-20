@@ -1,5 +1,5 @@
 {
-  "name": "renpy-editor",
+  "name": "novelblocks",
   "version": "1.0.0",
   "description": "Ren'Py Visual Editor",
   "main": "main.js",
@@ -18,12 +18,12 @@
     "@fontsource/dm-mono": "^5.3.0",
     "electron-updater": "^6.1.8"
   },
-  "productName": "Ren'Py EDITOR",
+  "productName": "NovelBlocks",
   "author": "Thander",
   "build": {
-    "appId": "com.thander.renpyeditor",
-    "productName": "Ren'Py EDITOR",
-    "artifactName": "RenPy-EDITOR-Setup-${version}.${ext}",
+    "appId": "com.thander.novelblocks",
+    "productName": "NovelBlocks",
+    "artifactName": "NovelBlocks-Setup-${version}.${ext}",
     "directories": {
       "output": "dist",
       "buildResources": "assets"
@@ -61,25 +61,25 @@
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "Ren'Py EDITOR"
+      "shortcutName": "NovelBlocks"
     },
     "linux": {
       "target": "AppImage",
       "icon": "assets/icon.png",
       "category": "Development",
-      "artifactName": "RenPy-EDITOR-${version}.${ext}"
+      "artifactName": "NovelBlocks-${version}.${ext}"
     },
     "mac": {
       "target": "dmg",
       "icon": "assets/icon.png",
       "category": "public.app-category.developer-tools",
-      "artifactName": "RenPy-EDITOR-${version}.${ext}"
+      "artifactName": "NovelBlocks-${version}.${ext}"
     },
     "publish": [
       {
         "provider": "github",
         "owner": "Thander11",
-        "repo": "Ren-Py-EDITOR"
+        "repo": "NovelBlocks"
       }
     ],
     "electronLanguages": [

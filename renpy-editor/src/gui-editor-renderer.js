@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// Ren'Py EDITOR — Game interface (GUI) editor window
+// NovelBlocks — Game interface (GUI) editor window
 // Edits the values of gui.rpy (and the text speed of options.rpy)
 // and the images of the textbox, namebox, choice buttons and game
 // menu, which can be the current ones, an image of the user's or
@@ -69,7 +69,7 @@ function applyI18n() {
     const key = el.getAttribute('data-i18n-placeholder');
     if (translations[key]) el.placeholder = t(key);
   });
-  document.title = "Ren'Py EDITOR — " + t('gui_editor_title');
+  document.title = "NovelBlocks — " + t('gui_editor_title');
 }
 function notify(msg, type = 'ok') {
   const n = document.getElementById('notif');
